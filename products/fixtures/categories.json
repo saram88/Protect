@@ -1,0 +1,18 @@
+[
+    {
+      "pk": 1,
+      "model": "products.category",
+      "fields": {
+        "name": "antivirus",
+        "friendly_name": "Antivirus"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.category",
+      "fields": {
+        "name": "vpn",
+        "friendly_name": "VPN"
+      }
+    }
+  ]
