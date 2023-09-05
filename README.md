@@ -6,7 +6,7 @@
 This is my Code Institute student PP5 final project Protect shop readme.
 The live link you can find here:
 
-## **[Live site]()**
+## **[Live site](LÄGG IN)**
 
 The Protect Shop is an online store where clients can purchase a wide range of cybersecurity antivirus. 
 Stripe is used as the payment processor. 
