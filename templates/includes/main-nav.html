@@ -5,10 +5,10 @@
                 Our Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">For home</a>
-                <a href="" class="dropdown-item">Small and home office</a>
-                <a href="" class="dropdown-item">VPN</a>
-                <a href="" class="dropdown-item">All Products</a>
+                <a href="{% url 'products'%}" class="dropdown-item">For home</a>
+                <a href="{% url 'products'%}" class="dropdown-item">Small and home office</a>
+                <a href="{% url 'products'%}" class="dropdown-item">VPN</a>
+                <a href="{% url 'products'%}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
@@ -17,7 +17,7 @@
                 Download
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Download</a>
+                <a href="{% url 'download'%}" class="dropdown-item">Download</a>
             </div>
         </li>
 
@@ -26,9 +26,9 @@
                 About us
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Get to know us</a>
-                <a href="" class="dropdown-item">Company overview</a>
-                <a href="" class="dropdown-item">Contact us</a>
+                <a href="{% url 'about'%}" class="dropdown-item">Get to know us</a>
+                <a href="{% url 'company'%}" class="dropdown-item">Company overview</a>
+                <a href="{% url 'contact'%}" class="dropdown-item">Contact us</a>
             </div>
         </li>
 
@@ -37,7 +37,7 @@
                 Existing Customer
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Renew your license</a>
+                <a href="{% url 'renew'%}" class="dropdown-item">Renew your license</a>
             </div>
         </li>
     </ul>
