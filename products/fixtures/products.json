@@ -1,0 +1,58 @@
+[
+    {
+      "pk": 1,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001340155",
+        "name": "Antivirus Lite",
+        "description": "Antivirus Lite",
+        "price": 23.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "",
+        "image": "antivirus-lite.png"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001600425",
+        "name": "Antivirus Standard",
+        "description": "Antivirus Standard",
+        "price": 45.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "",
+        "image": "antivirus-standard.png"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001730010",
+        "name": "Antivirus Extra",
+        "description": "Antivirus Extra",
+        "price": 68.99,
+        "category": 1,
+        "rating": 4.7,
+        "image_url": "",
+        "image": "antivirus-extra.png"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001890157",
+        "name": "VPN Secure Connection",
+        "description": "Safe. Private. Fast.",
+        "price": 35.99,
+        "category": 2,
+        "rating": 3,
+        "image_url": "",
+        "image": "vpn.png"
+      }
+    }
+  ]
