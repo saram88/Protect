@@ -13,19 +13,19 @@ def add_to_bag(request, item_id):
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    year = 1
+    if 'product_year' in request.POST:
+        year = int(request.POST['product_year'])
     bag = request.session.get('bag', {})
 
-    if size:
+    if year:
         if item_id in list(bag.keys()):
-            if size in bag[item_id]['items_by_size'].keys():
-                bag[item_id]['items_by_size'][size] += quantity
+            if year in bag[item_id]['items_by_year'].keys():
+                bag[item_id]['items_by_year'][year] += quantity
             else:
-                bag[item_id]['items_by_size'][size] = quantity
+                bag[item_id]['items_by_year'][year] = quantity
         else:
-            bag[item_id] = {'items_by_size': {size: quantity}}
+            bag[item_id] = {'items_by_year': {year: quantity}}
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
@@ -40,17 +40,17 @@ def adjust_bag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
 
     quantity = int(request.POST.get('quantity'))
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
+    year = 1
+    if 'product_year' in request.POST:
+        year = int(request.POST['product_year'])
     bag = request.session.get('bag', {})
 
-    if size:
+    if year:
         if quantity > 0:
-            bag[item_id]['items_by_size'][size] = quantity
+            bag[item_id]['items_by_year'][year] = quantity
         else:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
+            del bag[item_id]['items_by_year'][year]
+            if not bag[item_id]['items_by_year']:
                 bag.pop(item_id)
     else:
         if quantity > 0:
@@ -66,14 +66,14 @@ def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 
     try:
-        size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
+        year = 1
+        if 'product_year' in request.POST:
+            year = int(request.POST['product_year'])
         bag = request.session.get('bag', {})
 
-        if size:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
+        if year:
+            del bag[item_id]['items_by_year'][year]
+            if not bag[item_id]['items_by_year']:
                 bag.pop(item_id)
         else:
             bag.pop(item_id)

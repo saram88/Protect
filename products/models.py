@@ -20,8 +20,10 @@ class Category(models.Model):
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
-    name = models.CharField(max_length=254)
+    name = models.CharField(max_length=254, null=True, blank=True)
+    tag_line = models.CharField(max_length=254, null=True, blank=True)
     description = models.TextField()
+    renewal = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discount = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
