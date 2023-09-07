@@ -59,7 +59,7 @@ class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     product_year = models.IntegerField(null=False, blank=False, default=0) # 1, 2, 3, 4, 5
-    quantity = models.IntegerField(null=False, blank=False, default=0)
+    units = models.IntegerField(null=False, blank=False, default=0)
     renewal = models.BooleanField(null=True, blank=True, default=False)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
@@ -68,7 +68,7 @@ class OrderLineItem(models.Model):
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.product.price * self.quantity
+        self.lineitem_total = self.product.price * self.units
         super().save(*args, **kwargs)
 
     def __str__(self):

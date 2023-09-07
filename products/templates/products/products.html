@@ -54,6 +54,12 @@
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
+                                <div class="card-header bg-white pb-0">
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <p class="mb-0">{{ product.name }}</p>
+                                    </a>
+                                </div>
+                                
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -63,8 +69,13 @@
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                
+                                <div class="card-body product-desc pb-0">
+                                    <p class="mb-0">{{ product.description|linebreaksbr }}</p>
+                                </div>
+                                <p></p>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <p class="mb-0 font-weight-bold">{{ product.tag_line }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
@@ -85,6 +96,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                {% if product.discount %}
+                                <div class="product-discount">{{ product.discount }} %</div>
+                                {% endif %}
                             </div>
                         </div>
                         {% if forloop.counter|divisibleby:1 %}

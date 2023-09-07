@@ -109,7 +109,7 @@ The home page is divided into different sections.
 ### Product Details Page
 
 - The product detail page provides additional information about the products
-- The user can choose the quantity of the product they wish to purchase
+- The user can choose the units of the product they wish to purchase
 - A comment form is displayed in the review section for registered users to leave a comment.
 - Review of the product is displayed if there is a review available on that product.
 

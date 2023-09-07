@@ -25,7 +25,7 @@ class Product(models.Model):
     description = models.TextField()
     renewal = models.BooleanField(default=True, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    discount = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    discount = models.IntegerField(null=True, blank=True, default=0)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)

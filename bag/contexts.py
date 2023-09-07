@@ -17,17 +17,17 @@ def bag_contents(request):
             product_count += item_data
             bag_items.append({
                 'item_id': item_id,
-                'quantity': item_data,
+                'units': item_data,
                 'product': product,
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
-            for year, quantity in item_data['items_by_year'].items():
-                total += quantity * product.price
-                product_count += quantity
+            for year, units in item_data['items_by_year'].items():
+                total += units * product.price
+                product_count += units
                 bag_items.append({
                     'item_id': item_id,
-                    'quantity': quantity,
+                    'units': units,
                     'product': product,
                     'year': year,
                 })
