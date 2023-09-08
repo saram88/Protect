@@ -13,19 +13,19 @@ def add_to_bag(request, item_id):
 
     units = int(request.POST.get('units'))
     redirect_url = request.POST.get('redirect_url')
-    year = 1
-    if 'product_year' in request.POST:
-        year = int(request.POST['product_year'])
+    year = int(request.POST.get('years'))
+#    if 'years' in request.POST:
+#        year = int(request.POST['product_year'])
     bag = request.session.get('bag', {})
 
     if year:
         if item_id in list(bag.keys()):
-            if year in bag[item_id]['items_by_year'].keys():
-                bag[item_id]['items_by_year'][year] += units
+            if year in bag[item_id]['years'].keys():
+                bag[item_id]['years'][year] += units
             else:
-                bag[item_id]['items_by_year'][year] = units
+                bag[item_id]['years'][year] = units
         else:
-            bag[item_id] = {'items_by_year': {year: units}}
+            bag[item_id] = {'years': {year: units}}
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += (units * year)
@@ -40,17 +40,17 @@ def adjust_bag(request, item_id):
     """Adjust the units of the specified product to the specified amount"""
 
     units = int(request.POST.get('units'))
-    year = 1
-    if 'product_year' in request.POST:
-        year = int(request.POST['product_year'])
+    year = int(request.POST.get('years'))
+#    if 'product_year' in request.POST:
+#        year = int(request.POST['product_year'])
     bag = request.session.get('bag', {})
 
 #    if year:
 #        if units > 0:
-#            bag[item_id]['items_by_year'][year] = units
+#            bag[item_id]['years'][year] = units
 #        else:
-#            del bag[item_id]['items_by_year'][year]
-#            if not bag[item_id]['items_by_year']:
+#            del bag[item_id]['years'][year]
+#            if not bag[item_id]['years']:
 #                bag.pop(item_id)
 #    else:
     if units > 0:

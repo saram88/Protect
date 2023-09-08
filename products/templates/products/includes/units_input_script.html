@@ -1,12 +1,18 @@
 <script type="text/javascript">
 
-    // Disable +/- buttons outside 1-99 range
+    // Disable +/- buttons outside 1-10 range
     function handleEnableDisable(itemId) {
         var currentValue = parseInt($(`#id_qty_${itemId}`).val());
         var minusDisabled = currentValue < 2;
-        var plusDisabled = currentValue > 98;
+        var plusDisabled = currentValue > 9;
         $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+
+        currentValue = parseInt($(`#id_year_${itemId}`).val());
+        minusDisabled = currentValue < 2;
+        plusDisabled = currentValue > 4;
+        $(`#decrement-year_${itemId}`).prop('disabled', minusDisabled);
+        $(`#increment-year_${itemId}`).prop('disabled', plusDisabled);
     }
 
     // Ensure proper enabling/disabling of all inputs on page load
@@ -16,13 +22,25 @@
         handleEnableDisable(itemId);
     }
 
-    // Check enable/disable every time the input is changed
+    var allYearInputs = $('.year_input');
+    for(var i = 0; i < allYearInputs.length; i++){
+        var itemId = $(allYearInputs[i]).data('item_id');
+        handleEnableDisable(itemId);
+    }
+
+    // Check enable/disable every time the unit input is changed
     $('.qty_input').change(function() {
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
 
-    // Increment quantity
+    // Check enable/disable every time the unit input is changed
+    $('.year_input').change(function() {
+        var itemId = $(this).data('item_id');
+        handleEnableDisable(itemId);
+    });
+
+    // Increment units
     $('.increment-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
@@ -32,10 +50,30 @@
        handleEnableDisable(itemId);
     });
 
-    // Decrement quantity
+    // Decrement units
     $('.decrement-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       var itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
+
+    // Increment year
+    $('.increment-year').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.year_input')[0];
+       var currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       var itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
+
+    // Decrement year
+    $('.decrement-year').click(function(e) {
+       e.preventDefault();
+       var closestInput = $(this).closest('.input-group').find('.year_input')[0];
        var currentValue = parseInt($(closestInput).val());
        $(closestInput).val(currentValue - 1);
        var itemId = $(this).data('item_id');

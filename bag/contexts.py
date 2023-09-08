@@ -10,19 +10,20 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
 
-    for item_id, item_data in bag.items():
-        if isinstance(item_data, int):
+    for item_id, units in bag.items():
+        if isinstance(units, int):
             product = get_object_or_404(Product, pk=item_id)
-            total += item_data * product.price
-            product_count += item_data
+            total += units * product.price
+            product_count += units
             bag_items.append({
                 'item_id': item_id,
-                'units': item_data,
+                'units': units,
                 'product': product,
+                'years': 1,
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
-            for year, units in item_data['items_by_year'].items():
+            for year, units in units['years'].items():
                 total += units * product.price
                 product_count += units
                 bag_items.append({
@@ -32,22 +33,16 @@ def bag_contents(request):
                     'year': year,
                 })
 
-    if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
-    else:
-        delivery = 0
-        free_delivery_delta = 0
+    vat = total * Decimal(settings.STANDARD_VAT_PERCENTAGE / 100)
     
-    grand_total = delivery + total
+    grand_total = vat + total
     
     context = {
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
-        'delivery': delivery,
-        'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
+        'vat': vat,
+        'vat_percentage': settings.STANDARD_VAT_PERCENTAGE,
         'grand_total': grand_total,
     }
 
