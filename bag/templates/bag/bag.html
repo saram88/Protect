@@ -43,7 +43,8 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                        <p class="my-0"><strong>Subsription: </strong>{{ item.year }} Year(s)</p>
+                                        <p class="my-0"><strong>Units: </strong>{{ item.units }}</p>
+                                        <p class="my-0"><strong>Subsription: </strong>{{ item.years }} Year(s)</p>
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
@@ -86,9 +87,9 @@
                                                         </button>
                                                     </div>
                                                     <input class="form-control form-control-sm year_input" type="number"
-                                                        name="years" value="{{ item.units }}" min="1" max="5"
+                                                        name="years" value="{{ item.years }}" min="1" max="5"
                                                         data-item_id="{{ item.item_id }}"
-                                                        id="id_qty_{{ item.item_id }}">
+                                                        id="id_year_{{ item.item_id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-year btn btn-sm btn-black rounded-0"
                                                             data-item_id="{{ item.item_id }}" id="increment-year_{{ item.item_id }}">

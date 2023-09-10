@@ -17,30 +17,29 @@ def add_to_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     units = int(request.POST.get('units'))
-    redirect_url = request.POST.get('redirect_url')
     year = int(request.POST.get('years'))
-#    if 'years' in request.POST:
-#        year = int(request.POST['product_year'])
+    redirect_url = request.POST.get('redirect_url')
+    
     bag = request.session.get('bag', {})
 
     if year:
         if item_id in list(bag.keys()):
             if year in bag[item_id]['years'].keys():
                 bag[item_id]['years'][year] += units
-                messages.success(request, f'Updated {units} {product.name} with {year} to {bag[item_id]["years"][year]} units')
+                messages.success(request, f'1. Updated {units} {product.name} with {year} to {bag[item_id]["years"][year]} units')
             else:
                 bag[item_id]['years'][year] = units
-                messages.success(request, f'Added {units} {product.name} for {year} year(s) to your bag')
+                messages.success(request, f'2. Added {units} {product.name} for {year} year(s) to your bag')
         else:
             bag[item_id] = {'years': {year: units}}
-            messages.success(request, f'Added {units} {product.name} for {year} year(s) to your bag')
+            messages.success(request, f'3. Added {units} {product.name} for {year} year(s) to your bag')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += (units * year)
-            messages.success(request, f'Updated {units} {product.name} to {bag[item_id]}')
+            messages.success(request, f'4. Updated {units} {product.name} to {bag[item_id]}')
         else:
             bag[item_id] = (units * year)
-            messages.success(request, f'Added {units} {product.name} to your bag')
+            messages.success(request, f'5. Added {units} {product.name} to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -51,26 +50,26 @@ def adjust_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     units = int(request.POST.get('units'))
-    year = int(request.POST['years'])
+    year = int(request.POST.get('years'))
 
     bag = request.session.get('bag', {})
 
     if year:
         if units > 0:
             bag[item_id]['years'][year] = units
-            messages.success(request, f'Updated size {year} {product.name} quantity to {bag[item_id]["years"][year]}')
+            messages.success(request, f'6. Updated size {year} {product.name} quantity to {bag[item_id]["years"][year]}')
         else:
             del bag[item_id]['years'][year]
             if not bag[item_id]['years']:
                 bag.pop(item_id)
-            messages.success(request, f'Removed size {year} {product.name} from your bag')
+            messages.success(request, f'7. Removed size {year} {product.name} from your bag')
     else:
         if units > 0:
             bag[item_id] = (units * year)
-            messages.success(request, f'Updated {product.name} units to {bag[item_id]}')
+            messages.success(request, f'8. Updated {product.name} units to {bag[item_id]}')
         else:
             bag.pop(item_id)
-            messages.success(request, f'Removed {product.name} from your bag')
+            messages.success(request, f'9. Removed {product.name} from your bag')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
