@@ -509,11 +509,58 @@ Type | card No | Expiry | CVC | ZIP
 Success | **4242 4242 4242 4242** | A date in the future | Any 3 digits| Any 3 digits
 Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 digits| Any 5 digits
 
+# E-commerce Business Model
+
+## Web Marketing Strategies
+- The following strategies for Test a Virus and VPN have been considered and a combination of strategies can be implemented as the company grows.
+- For an online service, word of mouth will be the strongest tool alongside online support as described below. Whit person that work in company and talk to college in other company.
+
+## Facebook Business Page
+
+[Test a Protect Facebook]()
+
+Screenshots:
+  
+  ![Test-a-Protect-Facebook](https://github.com/PPindel/test-a-wheel/assets/114284732/50f75605-3e9f-4bde-8288-8859cc3a4687)
+  
+  ![Test-a-Protect-Facebook-2](https://github.com/PPindel/test-a-wheel/assets/114284732/9dbd19f2-ffd0-44fa-a4ab-f9f09c721b83)
+  
+  ![Test-a-Protect-Facebook-3](https://github.com/PPindel/test-a-wheel/assets/114284732/93d0e5d4-2f44-4319-aea6-38d7e759daf6)
+
+- The Facebook Business page for Test a Protect will be set up as an initial entry into the social media marketing space. 
+- It would be beneficial to set up an Instagram page that can link with Facebook and allow for more engagement with the target market.
+- The content would be focused on professional things that support why the user should have Virus security. 
+- It can also drive traffic to the newsletter to share more long-form content. 
+- Brand campaigns can be developed e.g. interviewing customers and getting testimonials.
+- Paid Instagram and Facebook ads can be used as a driver to the website.
+  
+## Newsletter Signup & Email Marketing
+
+![image](Bild)
+
+- The newsletter can allow more detail and article-type content to be delivered to those who opt-in. 
+- This can begin as a monthly update and can increase to weekly once a larger audience is established.
+- The social media pages can be used as a guide to what content is interesting to followers. 
+- Testing of approaches can be easily done to see which content generates referrals and sales. 
+- If there are competitions, offers, or information accouterments this channel can assist in information sharing with customers.
+
+## SEO
+- The content of the website was written inspired by real-business operating sites with similar content without the use of keyword stuffing as a bad practice.
+- The website was designed to extend additional meta descriptions and keywords as the site grows.
+- For now, the home and services page are SEO optimised which can be reworked if Google Adwords are implemented at a later stage.
+- There is a [robots.txt](Länk till den) and [site-map.xml](länk till sitemap) for search engine crawlers and proper indexing.   
+
+## Paid Advertising
+- For the size of this business, it would be beneficial to look at how social media advertising can drive traffic to the website with engaging content that is relatable to the customer.
+
+## Links
+- social links and other links that go outside the domain have `rel="nofollower"` to signal to search engines that those links are not associated with our specific domain
+
 
 ## Deployment
 
 
-The site has been deployed to Heroku at [https://ib-pp5-polshop.herokuapp.com/]()
+The site has been deployed to Heroku at [/]()
 
 ## Credits
 * [Back to table of contents]() 
