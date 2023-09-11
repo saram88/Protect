@@ -1,10 +1,12 @@
 import uuid
+import datetime
 
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 
 from django_countries.fields import CountryField
+from dateutil.relativedelta import relativedelta
 
 from products.models import Product
 from profiles.models import UserProfile
@@ -29,6 +31,7 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+
 
     def _generate_order_number(self):
         """
@@ -67,12 +70,27 @@ class OrderLineItem(models.Model):
     units = models.IntegerField(null=False, blank=False, default=0)
     renewal = models.BooleanField(null=True, blank=True, default=False)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    enddate = models.DateTimeField(null=True, blank=True)
+    license_key = models.CharField(max_length=32, null=True, editable=False)
+
+    def _generate_license_key(self):
+        """
+        Generate a random, unique license key UUID
+        """
+        return uuid.uuid4().hex.upper()
+
 
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
         and update the order total.
         """
+        if not self.license_key:
+            self.license_key = self._generate_license_key()
+
+        if not self.enddate:
+            self.enddate = datetime.datetime.now().date() + relativedelta(years=self.years)
+
         self.lineitem_total = self.product.price * self.units
         super().save(*args, **kwargs)
 
