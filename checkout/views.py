@@ -67,14 +67,14 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for years, units in item_data['years'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                units=units,
-                                years=years,
-                            )
-                            order_line_item.save()
+                        cart = json.loads(bag[item_id])
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            units=cart["unit"][0],
+                            years=cart["year"][0],
+                        )
+                        order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "

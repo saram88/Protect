@@ -105,7 +105,7 @@
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_year="{{ item.year }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.units }}</p>
+                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.unit_price }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
