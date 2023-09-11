@@ -119,6 +119,10 @@ body {
     color: #000 !important;
 }
 
+.text-gray {
+    color: #aab7c4;
+}
+
 .border-black {
     border: 1px solid black !important;
 }
@@ -162,16 +166,16 @@ a.category-badge > span.badge:hover {
 
 .product-discount {
     position: absolute;
-    top: 50px;
-    left: 10px;
+    top: 45px;
+    left: 0px;
     background-color: #f9d157;
     border: 1px solid #c5a544;
-    padding: 9px;
+    padding: 1px;
     width: 90px;
     text-align: center;
     font-weight: bold;
     border-radius: 30px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 /* Bootstrap Toast */

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load product_tool %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -80,7 +82,12 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
+                                            {% if product.discount %}
+                                            <p class="lead mb-0 text-left font-weight-bold"><s class="text-gray">${{ product.price }}</s> ${{ product.price |calc_productprice:product.discount }}</p>
+                                            {% else %}
                                             <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            {% endif %}
+                                            
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">

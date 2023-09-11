@@ -53,7 +53,7 @@
                             <p class="my-0 small text-muted">Units: {{ item.units }}</p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.unit_price }}</p>
+                            <p class="my-0 small text-muted">${{ item.product_price | calc_subtotal:item.unit_price }}</p>
                         </div>
                     </div>
                 {% endfor %}

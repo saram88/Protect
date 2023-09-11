@@ -29,13 +29,20 @@ def bag_contents(request):
         else:
             cart = json.loads(bag[item_id])
             product = get_object_or_404(Product, pk=item_id)
-            total = total + cart["year"][0] * cart["unit"][0] * product.price
+            if product.discount:
+                total = total + cart["year"][0] * cart["unit"][0] * (product.price - (product.price * product.discount / 100))
+                product_price = round(product.price - (product.price * product.discount / 100), 2)
+            else:
+                total = total + cart["year"][0] * cart["unit"][0] * product.price
+                product_price = product.price
+
             product_count = cart["unit"][0] * cart["year"][0]
             bag_items.append({
                     'item_id': item_id,
                     'units': cart["unit"][0],
                     'unit_price': cart["unit"][0] * cart["year"][0],
                     'product': product,
+                    'product_price': product_price,
                     'years': cart["year"][0],
                 })
 
