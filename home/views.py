@@ -26,7 +26,3 @@ def download(request):
     """ A view to return the download page """
     return render(request, 'home/download.html')
 
-
-def validate(request):
-    """ A view to return the renew page """
-    return render(request, 'home/validate_license.html')

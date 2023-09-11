@@ -178,3 +178,13 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def validate_license(request):
+    """ A view to return the validate page """
+
+    template = 'checkout/validate_license.html'
+    context = {
+    }
+
+    return render(request, template, context)
