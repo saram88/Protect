@@ -10,10 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='orderlineitem',
-            name='product_year',
-        ),
         migrations.AlterField(
             model_name='orderlineitem',
             name='years',

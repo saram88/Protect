@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='orderlineitem',
-            name='product_year',
+            name='years',
             field=models.IntegerField(default=0),
         ),
     ]
