@@ -288,7 +288,7 @@ The color palette for this project was kept as simple as possible in order to ma
 
 **[Homepage to Coolers](https://coolors.co/)**
 
-![](screenshot)
+![](/media/readme/Protect.png)
 
 - ## Model Schema
 
@@ -307,7 +307,7 @@ The site is based around a number of models separated into the following main gr
 
 - **Product** - stores all the details about a product for sale. Connected to the featured product, recently added products and Category objects via foreign key relationships.
 
-![]()
+![](/media/readme/Products.png)
 
 - **Review / Comments** - stores a user review of a product and is connected to the Product and by foreign key relationships.
 
@@ -517,15 +517,9 @@ Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 d
 
 ## Facebook Business Page
 
-[Test a Protect Facebook]()
+![](/media/readme/facebook%20protect.png)
 
-Screenshots:
-  
-  ![Test-a-Protect-Facebook](https://github.com/PPindel/test-a-wheel/assets/114284732/50f75605-3e9f-4bde-8288-8859cc3a4687)
-  
-  ![Test-a-Protect-Facebook-2](https://github.com/PPindel/test-a-wheel/assets/114284732/9dbd19f2-ffd0-44fa-a4ab-f9f09c721b83)
-  
-  ![Test-a-Protect-Facebook-3](https://github.com/PPindel/test-a-wheel/assets/114284732/93d0e5d4-2f44-4319-aea6-38d7e759daf6)
+ 
 
 - The Facebook Business page for Test a Protect will be set up as an initial entry into the social media marketing space. 
 - It would be beneficial to set up an Instagram page that can link with Facebook and allow for more engagement with the target market.
@@ -536,7 +530,7 @@ Screenshots:
   
 ## Newsletter Signup & Email Marketing
 
-![image](Bild)
+!![](/media/readme/Mailshimp.png)
 
 - The newsletter can allow more detail and article-type content to be delivered to those who opt-in. 
 - This can begin as a monthly update and can increase to weekly once a larger audience is established.
@@ -548,7 +542,7 @@ Screenshots:
 - The content of the website was written inspired by real-business operating sites with similar content without the use of keyword stuffing as a bad practice.
 - The website was designed to extend additional meta descriptions and keywords as the site grows.
 - For now, the home and services page are SEO optimised which can be reworked if Google Adwords are implemented at a later stage.
-- There is a [robots.txt](Länk till den) and [site-map.xml](länk till sitemap) for search engine crawlers and proper indexing.   
+- There is a [robots.txt](https://github.com/saram88/Protect/blob/df4c99365800fe04c38297b4a6959b65bd38fd8a/robots.txt) and [site-map.xml](https://github.com/saram88/Protect/blob/df4c99365800fe04c38297b4a6959b65bd38fd8a/sitemap.xml) for search engine crawlers and proper indexing.   
 
 ## Paid Advertising
 - For the size of this business, it would be beneficial to look at how social media advertising can drive traffic to the website with engaging content that is relatable to the customer.
@@ -566,9 +560,7 @@ The site has been deployed to Heroku at [/]()
 * [Back to table of contents]() 
 * [Back to top of README.md]() 
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
--   ### Source code
+    ### Source code
 
     - Code Institute Django course material, tutors, mentors and colleagues in Slack channels.
     - Bootstrap documentation https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
@@ -581,4 +573,4 @@ The site has been deployed to Heroku at [/]()
     ### Contact me
 
      - Sara Mentzer [LinkedIn](https://www.linkedin.com/in/sara-mentzer-17b9b1170/)
-     Sara Mentzer [GitHub]()https://github.com/saram88
+     - Sara Mentzer [GitHub](https://github.com/saram88)
