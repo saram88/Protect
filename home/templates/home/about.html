@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,29 +14,30 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid about-containter">
-    <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                About us
-            </h1>
-            <br>
-            <br>
-            <h3>
-                We are your safety. Protect is a security company that delivers product solutions 
-                for you as a customer to be able to surf and work in IT-related issues in a secure way. 
-                We are located in Sweden and are close at hand to meet you if you have any questions. 
-                <br>
-                <br>
-                <br>
-
-                So always feel free to contact us if you need to.
-            </h3>
-            <br>
-            <h4>
-                <a href="/home/templates/home/contact.html" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Contact us now</a>
-            </h4>
+    <div class="overlay"></div>
+    <div class="container about-containter">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">About Us</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-12">
+                <p>
+                    We are your safety. Protect is a security company that delivers product solutions 
+                    for you as a customer to be able to surf and work in IT-related issues in a secure way. 
+                    We are located in Sweden and are close at hand to meet you if you have any questions.
+                </p>
+                <p>
+                    So always feel free to contact us if you need to.
+                </p>
+                <a href="{% url 'contact' %}" class="btn btn-black rounded-0 text-uppercase mt-3">
+                    <span class="text-uppercase">Contact us now</span>
+                </a>
+            </div>
+            
         </div>
     </div>
-</div>
 {% endblock %}

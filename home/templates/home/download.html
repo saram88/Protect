@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,13 +11,63 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid download-containter">
-    <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                Download
-            </h1>
+    <div class="overlay"></div>
+    <div class="container about-containter">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Download</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-12">
+                <p>
+
+                </p>
+                <button type="button" class="btn btn-outline-black rounded-0 text-uppercase mt-3" data-bs-toggle="modal" data-bs-target="#download_trial">
+                    Download 30 days trial
+                </button>
+                <button type="button" class="btn btn-black rounded-0 text-uppercase mt-3" data-bs-toggle="modal" data-bs-target="#download_product">
+                    Download Product
+                </button>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="download_product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="downloadProductLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="downloadProductLabel">Download</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="download_trial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="downloadTrialLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="downloadTrialLabel">Download</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
