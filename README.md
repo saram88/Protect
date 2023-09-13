@@ -4,9 +4,13 @@
 # Welcome to Protect shop
 
 This is my Code Institute student PP5 final project Protect shop readme.
-The live link you can find here:
+The live link and my GitHUb reprosity you can find here:
 
-## **[Live site](LÄGG IN)**
+## **[Live site](https://saram88-protect-d3535879dbc8.herokuapp.com/bag/)**
+
+## **[GitHub](https://github.com/saram88/Protect)**
+
+
 
 The Protect Shop is an online store where clients can purchase a wide range of cybersecurity antivirus. 
 Stripe is used as the payment processor. 
@@ -19,11 +23,8 @@ Use the test card number 4242 4242 4242 4242 with a future expiration date, a th
 
 ## Introduction
 
-* [Back to table of contents](#table-of-contents) 
-* [Back to top of README.md](#Protect) 
 
 Protect is a website built in Django using Python, JavaScript, CSS and HTML. 
-
 
 ### Site Goals
 - Site owner aim and business model.
