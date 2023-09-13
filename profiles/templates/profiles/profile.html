@@ -58,7 +58,10 @@
                                         <ul class="list-unstyled">
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
-                                                    {{ item.product.name }} {{ item.units }} units, {{ item.units }} year(s)
+                                                    <a href="{% url 'order_license' order.order_number %}"
+                                                        title="{{ order.order_number }}">
+                                                            {{ item.product.name }} {{ item.units }} units, {{ item.units }} year(s)
+                                                        </a>
                                                 </li>
                                             {% endfor %}
                                         </ul>
