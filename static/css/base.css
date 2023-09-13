@@ -120,6 +120,11 @@ body {
     color: #aab7c4;
 }
 
+.text-bold-green {
+    color: #02680a !important;
+    font-weight: bold;
+}
+
 .border-black {
     border: 1px solid black !important;
 }
@@ -190,6 +195,11 @@ a.category-badge > span.badge:hover {
 .toast-capper {
     height: 2px;
 }
+
+.footer {
+    padding: 30px;
+}
+
 
 /* -------------------------------- Media Queries */
 

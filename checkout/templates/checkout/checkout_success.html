@@ -62,11 +62,19 @@
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p class="small mb-0 text-black font-weight-bold">
-                                {{ item.product.name }}{% if item.product_size %} - Size {{ item.product.size|upper }}{% endif %}
+                                {{ item.product.name }} for {{ item.years}} year(s)
                             </p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="small mb-0">{{ item.units }} @ ${{ item.product.price }} each</p>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p class="small mb-0 text-black font-weight-bold">
+                                - License key (valid to {{ item.enddate|date:'Y-m-d' }})
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-8 text-md-right">
+                            <p class="small mb-0 text-bold-green">{{ item.license_key }}</p>
                         </div>
                     </div>
                     {% endfor %}

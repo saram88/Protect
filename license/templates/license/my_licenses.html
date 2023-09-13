@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -11,20 +15,64 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">License</h2>
+                <h2 class="logo-font mb-4">Your license inforamtion </h2>
                 <hr>
             </div>
         </div>
-
         <div class="row">
-            <div class="col">
-                <p class="lead mb-5">Your product license</p>
-
+            <div class="col col-lg-12">
+                <p class="text-muted">Orders</p>
+                <div class="order-history table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        Order: {{ order.order_number }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table class="table table-sm table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th>Product</th>
+                                                    <th>Units</th>
+                                                    <th>Years</th>
+                                                    <th>License Key</th>
+                                                    <th>Valid to</th>
+                                                </tr>
+                                            </thead>       
+                                            <tbody>
+                                                {% for item in order.lineitems.all %}
+                                                    <td>{{ item.product.name }}</td>
+                                                    <td>{{ item.units }}</td>
+                                                    <td>{{ item.years }}</td>
+                                                    <td class="text-bold-green">{{ item.license_key }}</td>
+                                                    <td>{{ item.enddate }}</td>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        <div class="row">
+			<div class="col-12 col-lg-7">
+                {% if from_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-outline-black rounded-0">
+                    <span class="text-uppercase">Back to profile</span>
+                </a>
+                {% endif %}
+			</div>
+		</div>
     </div>
 {% endblock %}

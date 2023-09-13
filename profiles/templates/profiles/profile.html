@@ -29,7 +29,10 @@
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                    <a href="{% url 'licenses' %}" class="btn btn-outline-black rounded-0">
+                        <span class="text-uppercase">View Licenses</span>
+                    </a>
+                    <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Update Information">
                 </form>
             </div>
             <div class="col-12 col-lg-6">
@@ -59,7 +62,7 @@
                                             {% for item in order.lineitems.all %}
                                                 <li class="small">
                                                     <a href="{% url 'order_license' order.order_number %}"
-                                                        title="{{ order.order_number }}">
+                                                        title="{{ item.product.name }}">
                                                             {{ item.product.name }} {{ item.units }} units, {{ item.units }} year(s)
                                                         </a>
                                                 </li>
