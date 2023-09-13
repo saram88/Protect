@@ -80,7 +80,7 @@ Protect is a website built in Django using Python, JavaScript, CSS and HTML.
 The home page is divided into different sections.
 
 - A hero image with a link to the All Products page and some text content to boost SEO (Search Engine Optimisation).
-![]()
+![](/media/readme/startsida.png)
 
 - The Recently Added Products section displays the most recently added eight products. 
 ![]()
@@ -93,6 +93,8 @@ The home page is divided into different sections.
 
 
 ### Products Page
+
+![](/media/readme/products.png)
 - The All Products page displays all the products available on the website. 
 - The user has the option to sort the products by various categories. JA ELLER NEJ?
 - Once the user clicks on the product, they go to the product details page.
@@ -124,6 +126,9 @@ The home page is divided into different sections.
     ![](docs/screenshot/features/ordersheet.png)
 
 ### Checkout Page
+
+ ![](/media/readme/checkout.png)
+
 - The checkout page is intended to make it easy for a user to make purchase.
 - Only registered users can save their info for future purchase.
 - It also shows the summary of the products so that the user knows what they are purchasing before making the payment.
@@ -199,9 +204,9 @@ The approved way to generate interest is an organic approach as the marketing bu
 
 Facebook marketing is often more important than any other platform, we are using it for this project. 
 
-I started with the CI planning template [below](screenshot på facebook), 
+  ![](/media/readme/facebook%20protect.png)
 
-and created a page which may still be visible [here](länk till facebook)
+and created a page which may still be visible [here](https://www.facebook.com/profile.php?id=61550857243246)
 
 
 ### Search Engine Optimization
@@ -288,7 +293,7 @@ The color palette for this project was kept as simple as possible in order to ma
 
 **[Homepage to Coolers](https://coolors.co/)**
 
-![](/media/readme/Protect.png)
+![](/media/readme/Coolers.png)
 
 - ## Model Schema
 
