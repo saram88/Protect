@@ -573,25 +573,36 @@ Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 d
 
 
 ## Deployment
+( Ta från annan  readme jag har uppe efter genomgång med Niklas)
 
-
-The site has been deployed to Heroku at [/]()
+The site has been deployed to Heroku at [/](https://saram88-protect-d3535879dbc8.herokuapp.com/products/)
 
 ## Credits
-* [Back to table of contents]() 
-* [Back to top of README.md]() 
+- The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
+- https://www.geeksforgeeks.org/ - code solutions
+- https://www.w3schools.com/ - code solutions
+- https://github.com/Code-Institute-Org/gitpod-full-template - Code Institute Template
+- https://pep8ci.herokuapp.com/ - code validation tool
+- Mailchimp - subscription tool
+- Stripe - payment tool
+- AWS & ElephantSQL - databases
+- Heroku - hosting
+- GitPod - IDE
+- https://www.privacypolicygenerator.info/( for pravicy policys)
 
-    ### Source code
 
-    - Code Institute Django course material, tutors, mentors and colleagues in Slack channels.
-    - Bootstrap documentation https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
+## Source code
+
+- Code Institute Django course material, tutors, mentors and colleagues in Slack channels.
+- Bootstrap documentation https://getbootstrap.com/docs/5.3/getting-started/introduction/ 
+
     
--   ### Images
-    - Product images https://www.pexels.com/ 
-    - favicon.ico generation https://favicon.io/favicon-generator/
-    - Colors from [Coolors](https://coolors.co/)
+## Images
+- Product images https://www.pexels.com/ 
+- favicon.ico generation https://favicon.io/favicon-generator/
+- Colors from [Coolors](https://coolors.co/)
 
-    ### Contact me
+### Contact me
 
-     - Sara Mentzer [LinkedIn](https://www.linkedin.com/in/sara-mentzer-17b9b1170/)
-     - Sara Mentzer [GitHub](https://github.com/saram88)
+- Sara Mentzer [LinkedIn](https://www.linkedin.com/in/sara-mentzer-17b9b1170/)
+- Sara Mentzer [GitHub](https://github.com/saram88)
