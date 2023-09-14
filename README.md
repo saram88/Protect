@@ -199,19 +199,34 @@ Future Enhancements user stories [here](länk till vad jag vill erbjuda i framti
 - Could enable Site admin to respond to and/or delete a comment on the site
 - The example app used sizes for products i.e. XS, S, M, L, XL. I don't use product sizes for consulting services and time, but am considering changing to hours, days, weeks etc in a future version.
 
+## Ecommerce Buisness Model
+
+### Executive summary
+
+Protect is a business to consumer (B2C) ecommerce site for users (consumers) that help costumers to have a a
+secure it products on their computer. So they can have a virusfree computer.
+  - A user is able to purchase a chosen product.
+  - With the user stored information (eg. Name, address), we as a company will <br>
+    order the relevant parts in advance based on the users needs and requirements, <br>
+    travel to the customer site and carry out the service they purchased.
+  - For repeat or returning users/consumers, they are able to log in to their account, <br>
+    check when the last service was carried out <br>
+    and purchase a repeat product or a different product at their leisure<br>
+  - Users are able to signup to our newsletter for special offers and discounts<br>
+  - Social media has been utilised to drive traffic to the website to aid in further purchases
+
 ### Web Marketing
 The use of social media marketing is very important for bringing in customers and increasing visibility of the site. 
 The approved way to generate interest is an organic approach as the marketing budget will be small initially.
 
-Facebook marketing is often more important than any other platform, we are using it for this project. 
+Facebook marketing is often more important than any other platform, we are using it for this project. and created a page which may still be visible [here](https://www.facebook.com/profile.php?id=61550857243246)
+
 
   ![](/media/readme/facebook%20protect.png)
 
-and created a page which may still be visible [here](https://www.facebook.com/profile.php?id=61550857243246)
-
-
 ### Search Engine Optimization
 The meta keywords and description in base.html have been amended to the researched keywords. 
+
 On significant pages like the index and product pages, the site title has the name Protect and also has keywords.
 
 The homepage has also been designed with SEO in mind. 
