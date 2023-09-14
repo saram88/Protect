@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /payments/
+Disallow: /profiles/
+Sitemap: https://saram88-protect-d3535879dbc8.herokuapp.com/sitemap.xml
