@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -53,7 +53,7 @@ def validate_license(request):
 
         if key:
             order_line = OrderLineItem.objects.filter(license_key=key)
-            
+
             if order_line.count() > 0:
                 template = 'license/validate_license.html'
                 context = {
@@ -62,7 +62,7 @@ def validate_license(request):
                 }
                 messages.success(request, 'This is a valid license')
                 return render(request, template, context)
-        
+
         template = 'license/validate_license.html'
         context = {
             'is_checked': True

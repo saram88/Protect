@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+
 def index(request):
     """ Return to Index page"""
     return render(request, 'home/index.html')
@@ -25,4 +26,3 @@ def contact(request):
 def download(request):
     """ A view to return the download page """
     return render(request, 'home/download.html')
-

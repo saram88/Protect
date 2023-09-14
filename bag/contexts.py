@@ -30,10 +30,13 @@ def bag_contents(request):
             cart = json.loads(bag[item_id])
             product = get_object_or_404(Product, pk=item_id)
             if product.discount:
-                total = total + cart["year"][0] * cart["unit"][0] * (product.price - (product.price * product.discount / 100))
-                product_price = round(product.price - (product.price * product.discount / 100), 2)
+                new_price = (
+                    product.price - (product.price * product.discount / 100)
+                )
+                total = total + cart["year"][0] * cart["unit"][0] * new_price
+                product_price = round(product.price - new_price, 2)
             else:
-                total = total + cart["year"][0] * cart["unit"][0] * product.price
+                total = total + cart["year"][0]*cart["unit"][0]*product.price
                 product_price = product.price
 
             product_count = cart["unit"][0] * cart["year"][0]
@@ -48,7 +51,7 @@ def bag_contents(request):
 
     vat = total * Decimal(settings.STANDARD_VAT_PERCENTAGE / 100)
     grand_total = vat + total
-    
+
     context = {
         'bag_items': bag_items,
         'total': total,
