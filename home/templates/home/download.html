@@ -23,49 +23,34 @@
         <div class="row">
             <div class="col col-lg-12">
                 <p>
-
+                    <h3>Download free security for you and your family</h3> 
                 </p>
-                <button type="button" class="btn btn-outline-black rounded-0 text-uppercase mt-3" data-bs-toggle="modal" data-bs-target="#download_trial">
-                    Download 30 days trial
-                </button>
-                <button type="button" class="btn btn-black rounded-0 text-uppercase mt-3" data-bs-toggle="modal" data-bs-target="#download_product">
-                    Download Product
-                </button>
-            </div>
-        </div>
-    </div>
+                <p>
+                    <h5>Try before you buy</h5> 
+                </p>
+                <p>
+                    Your free trial lasts 30 days. We will remind you 7 days before your trial ends to see if you are satisfied with our product. At any time during your trial period, you may purchase a version of our product to obtain a valid license.
+                </p>
+                <p>
+                    If you have already purchased a version of our product, click "Download" to get started with your security right away.
+                </p>
 
-    <!-- Modal -->
-    <div class="modal fade" id="download_product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="downloadProductLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="downloadProductLabel">Download</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                <a class="btn btn-outline-black rounded-0 text-uppercase mt-3" href="{% url 'download_file' 'protect_install_trial.zip' %}">
+                    <span class="icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </span>
+                    <span class="text-uppercase">Download 30 days trial</span>
+                </a>
 
-    <div class="modal fade" id="download_trial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="downloadTrialLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="downloadTrialLabel">Download</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
-                </div>
+                <a class="btn btn-black rounded-0 text-uppercase mt-3" href="{% url 'download_file' 'protect_install.zip' %}">
+                    <span class="icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </span>
+                    <span class="text-uppercase">Download</span>
+                </a>
+                <p class="small mt-1 mb-0 text-muted">
+                    None of the downloads above are not real installation files
+                </p>
             </div>
         </div>
     </div>
