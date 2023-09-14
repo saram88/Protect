@@ -225,9 +225,9 @@ Facebook marketing is often more important than any other platform, we are using
   ![](/media/readme/facebook%20protect.png)
 
 ### Search Engine Optimization
-The meta keywords and description in base.html have been amended to the researched keywords. 
+The meta keywords and description in base.html have been amended to the researched keywords. Also in i about us page. In base.html we also have use good content for SEO in meta tags. All Keywords is also placed in a meta tag in the head of base.html.
 
-On significant pages like the index and product pages, the site title has the name Protect and also has keywords.
+On significant pages like the index and about us pages, the site title has the name Protect and also has keywords. 
 
 The homepage has also been designed with SEO in mind. 
 
