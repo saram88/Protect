@@ -68,7 +68,7 @@ def adjust_bag(request, item_id):
 
     cart = json.loads(bag[item_id])
 
-    if units > 0:
+    if units > 0 and year > 0:
         cart["year"][0] = year
         cart["unit"][0] = units
         bag[item_id] = json.dumps(cart, default=set_default)
