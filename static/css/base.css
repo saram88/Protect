@@ -199,7 +199,13 @@ a.category-badge > span.badge:hover {
 }
 
 .footer {
-    padding: 30px;
+    width: 100%;
+    display: inline-block;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    border-top: 4px solid #3A98B9;
 }
 
 
