@@ -34,7 +34,7 @@ def bag_contents(request):
                     product.price - (product.price * product.discount / 100)
                 )
                 total = total + cart["year"][0] * cart["unit"][0] * new_price
-                product_price = round(product.price - new_price, 2)
+                product_price = round(new_price, 2)
             else:
                 total = total + cart["year"][0]*cart["unit"][0]*product.price
                 product_price = product.price
