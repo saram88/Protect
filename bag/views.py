@@ -34,18 +34,24 @@ def add_to_bag(request, item_id):
             cart["unit"][0] += units
             bag[item_id] = json.dumps(cart, default=set_default)
             messages.success(
-                request, f'1. Updated {units} {product.name} with {year} to {cart["unit"][0]} units')
+                request,
+                f'Updated {units} {product.name} with {year} to " \
+                    {cart["unit"][0]} units'
+            )
         else:
             bag[item_id] = json.dumps(
-                {'year': {year}, 'unit': {units} }, default=set_default)
+                {'year': {year}, 'unit': {units}}, default=set_default)
             messages.success(
-                request, f'2. Added {units} {product.name} for {year} year(s) to your bag'
+                request,
+                f'Added {units} {product.name} for {year} year(s) to your bag'
             )
     else:
         bag[item_id] = json.dumps(
-            {'year': {year}, 'unit': {units} }, default=set_default)
+            {'year': {year}, 'unit': {units}}, default=set_default)
         messages.success(
-            request, f'3. Added {units} {product.name} for {year} year(s) to your bag')
+            request,
+            f'Added {units} {product.name} for {year} year(s) to your bag'
+        )
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -66,11 +72,15 @@ def adjust_bag(request, item_id):
         cart["year"][0] = year
         cart["unit"][0] = units
         bag[item_id] = json.dumps(cart, default=set_default)
-        messages.success(request, f'6. Updated {units} {product.name} with {year} to {cart["unit"][0]} units')
+        messages.success(
+            request,
+            f'Updated {units} {product.name} with {year} to " \
+            {cart["unit"][0]} units'
+        )
     else:
         bag.pop(item_id)
-        messages.success(request, f'7. Removed {product.name} from your bag')
-    
+        messages.success(request, f'Removed {product.name} from your bag')
+
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
 

@@ -14,8 +14,12 @@ from profiles.models import UserProfile
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, 
-                                            null=True, related_name='orders')
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='orders'
+    )
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -26,12 +30,19 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    vat_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    vat_cost = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, default=0
+    )
+    order_total = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0
+    )
+    grand_total = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0
+    )
     original_bag = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
-
+    stripe_pid = models.CharField(
+        max_length=254, null=False, blank=False, default=''
+    )
 
     def _generate_order_number(self):
         """
@@ -44,9 +55,15 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.vat_cost = self.order_total * settings.STANDARD_VAT_PERCENTAGE / 100
-        
+        self.order_total = (
+            self.lineitems.aggregate(
+                Sum('lineitem_total')
+                )['lineitem_total__sum'] or 0
+        )
+        self.vat_cost = (
+            self.order_total * settings.STANDARD_VAT_PERCENTAGE / 100
+        )
+
         self.grand_total = self.order_total + self.vat_cost
         self.save()
 
@@ -64,12 +81,22 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    years = models.IntegerField(null=False, blank=False, default=0) # 1, 2, 3, 4, 5
+    order = models.ForeignKey(
+        Order,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='lineitems'
+    )
+    product = models.ForeignKey(
+        Product, null=False, blank=False, on_delete=models.CASCADE
+    )
+    years = models.IntegerField(null=False, blank=False, default=0)
     units = models.IntegerField(null=False, blank=False, default=0)
     renewal = models.BooleanField(null=True, blank=True, default=False)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, blank=False, editable=False
+    )
     enddate = models.DateTimeField(null=True, blank=True)
     license_key = models.CharField(max_length=32, null=True, editable=False)
 
@@ -78,7 +105,6 @@ class OrderLineItem(models.Model):
         Generate a random, unique license key UUID
         """
         return uuid.uuid4().hex.upper()
-
 
     def save(self, *args, **kwargs):
         """
@@ -89,7 +115,9 @@ class OrderLineItem(models.Model):
             self.license_key = self._generate_license_key()
 
         if not self.enddate:
-            self.enddate = datetime.datetime.now().date() + relativedelta(years=self.years)
+            self.enddate = (
+                datetime.datetime.now().date()+relativedelta(years=self.years)
+            )
 
         self.lineitem_total = self.product.price * self.units
         super().save(*args, **kwargs)
