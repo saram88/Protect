@@ -589,6 +589,7 @@ The site has been deployed to Heroku at [/](https://saram88-protect-d3535879dbc8
 - Heroku - hosting
 - GitPod - IDE
 - https://www.privacypolicygenerator.info/( for pravicy policys)
+- https://www.wordtracker.com/ ( keywords SEO)
 
 
 ## Source code
