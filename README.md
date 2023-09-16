@@ -354,7 +354,58 @@ The reason for this is because during this code refactoring, the instructor uses
 
 ## Testing
 
-### Google Lighthouse Testing
+### Manually function testing ###
+
+#### Account Registration test #### 
+User | Function | Description | Result 
+--- | --- | --- | --- 
+|Site user | User can create account | the sign up page creates a new user when correctly completed | OK |
+|Site user | User can log into account| the new user can sign in and their name appears in the main page and subsequent orders made | OK|
+|Site user | User can log out of account| the logout option returns to the main non logged in page with the register and login options| OK|
+
+
+#### Navigation test #### 
+User | Function | Description | Result 
+--- | --- | --- | --- 
+|Site user|User can navigate to Product Details | Product details are displayed when product clicked in list | OK |
+|Site user|User can access menu items| Menu items are appropriate to state and appear in dropdow for CRUD | OK|
+|Site admin|Admin can access admin panel| Admin user menu item appears and goes to Admin page |OK|
+
+#### Security test ####
+User | Function | Description | Result 
+--- | --- | --- | --- 
+|All user|Not logged in user cannot add a product | Not logged in User cannot create a product (cut and paste create link) and returns to the login page |OK |
+|All user|Not logged in user cannot edit a product | Not logged in User cannot edit a product (cut and paste edit link) and returns to login page | OK|
+|Site user|Non superuser cannot access admin panel | User not logged in trying to get to admin link fails and goes to admin login page | OK|
+
+#### View and purchase test #### 
+User | Function | Description | Result 
+--- | --- | --- | --- 
+|Logged in user|User can save a profile or order when all required fields are completed | if fields are missing, informative errors are flagged, and completes successfully when form is complete | OK |
+|Logged in user|User can save a profile or order when all required fields are completed | user has the option to complete the profile/order | OK |
+|Logged in user|User can save a profile or order when all required fields are completed | user has the option to draft save a profile or order which then needs to be edited to be completed | OK |
+|Logged in user|User tries to submit a profile or order with empty form is not possible | if form is blank the profile or order does not submit |OK|
+|Logged in user|User can view their profile or order | user can see the profile or order page when submitted |OK|
+|Logged in user|User can edit the profile or order| user can only see the edit button on their profile or order detail |OK|
+|Logged in|Edit button does not present on other users profile or order| User only gets edit button on their profile or orer |OK|
+
+#### Account test ####
+User | Function | Description | Result 
+--- | --- | --- | --- 
+|All user|User cannot register username to the same as another user| trying an existing username fails if it already exists |OK|
+|All user|User cannot register their email to the same as another user | trying an existing email fails if it is already recorded |OK|
+
+#### Admin test ####
+User | Function | Description | Result 
+--- | --- | --- | --- 
+|Admin user|Admin can add products to site| Admin panel has the option to add products and products appear when published  |OK|
+|Admin can edit products on site| Admin panel can edit products and updates show on products |OK|
+|Admin user|Admin can delete products on site| Admin panel has delete option and products disappear when deleted |OK|
+|Admin user|Products changed by the admin display correctly on main site when updated / added| Changes appear when main site is viewed |OK|
+
+### Automatic testing ###
+
+#### Google Lighthouse Testing ####
 
 The lighthouse results do vary depending on Internet contention and time of day, affecting the load times for linked resources such as bootstrap, fonts, css and js.
 The necessary bootstrap modules, particularly for Popper dropdown menus and Stripe functionality do add siginificant load, but are essential.
@@ -366,12 +417,12 @@ I try to follow this manual, if you want to read more [Here](https://developer.c
 
 ![](/media/readme/testchrome.jpg)
 
-### HTML W3 Validation
+#### HTML W3 Validation ####
 
 ![HTML ✅ ](/media/readme/htmlchecker.jpg)
 Result: Pass - No Errors
 
-## CSS Validation
+#### CSS Validation ####
 
 Here is a link to the validate result that you also can use for future if i want to validate it again if i chnage something. [Here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsaram88-protect-d3535879dbc8.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)  
 
@@ -379,14 +430,14 @@ Result: Pass - No Errors
 
 ![W3 Validation checker](/media/readme/testcss.jpg)
 
-## JS validator
+#### JS validator ####
 
 ![jshint.com](/media/readme/testjs.png)
 Result: Pass - No Errors
 
-## PyLint Validation
+#### PyLint Validation ####
 ![https://pep8ci.herokuapp.com](/media/readme/testpy.jpg)
-Result: Pass - No Errors - and same across all files for pylint addin for Gitpod/VSCode.
+Result: Pass - No Errors
 
 ## Credits
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
