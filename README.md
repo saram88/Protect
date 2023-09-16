@@ -606,6 +606,10 @@ Here is a link to the validate result [Here](https://jigsaw.w3.org/css-validator
 
 ![W3 Validation checker](/media/readme/testcss.jpg)
 
+## JS validator
+
+![jshint.com](/media/readme/testjs.png)
+
 ## Credits
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
 - https://www.geeksforgeeks.org/ - code solutions
