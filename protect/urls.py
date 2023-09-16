@@ -32,5 +32,5 @@ urlpatterns = [
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = "vinyl_store.views.handler404"
-handler500 = "vinyl_store.views.handler500"
+handler404 = "protect.views.handler404"
+handler500 = "protect.views.handler500"
