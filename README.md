@@ -1,5 +1,5 @@
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![CI logo](/media/readme/frame.jpg)
 
 # Welcome to Protect shop
 
@@ -10,8 +10,6 @@ The live link and my GitHUb reprosity you can find here:
 
 ## **[GitHub](https://github.com/saram88/Protect)**
 
-
-
 The Protect Shop is an online store where clients can purchase a wide range of cybersecurity antivirus. 
 Stripe is used as the payment processor. 
 Use the test card number 4242 4242 4242 4242 with a future expiration date, a three-digit CVC, and a five-digit postal code to test the payment functionality.
@@ -19,10 +17,57 @@ Use the test card number 4242 4242 4242 4242 with a future expiration date, a th
 
 ### By [Sara Mentzer](https://www.linkedin.com/in/sara-mentzer-17b9b1170/)
 
----
+## Table of Contents
+* [Introduction](#introduction)
+    - [Site Goals](#Site-Goals)
+* [Features](#features)
+    - [Navigation](#navigation)
+    - [Footer](#footer)
+    - [Home Page](#home-page)
+    - [Products Page](#products-page)
+    - [Product Details Page](#product-details-page)
+    - [Checkout Page](#checkout-page)
+    - [Ordersheet Page](#ordersheet-page)
+    - [Profile Page](#profile-page)
+    - [Contact Page](#contact-page)
+    - [Error 404 Page and 500 error Page](#error-404-page-and-500-error-page)
+    - [Forgot Password](#forgot-password)
+    - [Register Page](#register-page)
+    - [Login](#login)
+* [Future ideas](#future-ideas)
+* [Model schema](#model-schema)
+* [Agile Development](#agile-development)
+    - [Epics and userstorys](#epics-and-userstorys)
+* [Technologies Used](#technologies-used)
+    - [Language Used](#language-used)
+    - [Frameworks Used](#frameworks-used)
+    - [Libraries Used](#libraries-used)
+    - [Database Used](#database-used)
+    - [Stripe](#stripe)
+* [E-commerce Business Model](#e-commerce-business-model)
+    - [Web Marketing Strategies](#web-marketing-strategies)
+    - [Facebook Business Page](#facebook-business-page)
+    - [Newsletter Signup & Email Marketing](#newsletter-signup--email-marketing)
+    - [SEO](#seo)
+    - [Paid Advertising](#paid-advertising)
+    - [Links](#links)
+    - [Design](#design)
+    - [Color](#color)
+* [Deployment](#deployment)
+* [Bugs](#bugs)
+* [Testing](#testing)
+    - [Google Lighthouse Testing](#google-lighthouse-testing)
+    - [HTML W3 Validation](#html-w3-validation)
+    - [CSS Validation](#css-validation)
+    - [JS validator](#js-validator)
+    - [PyLint Validation](#pylint-validation)
+    - [Credits](#credits)
+    - [Source code](#source-code)
+    - [Images](#images)
+* [Contact me](#contact-me)
+
 
 ## Introduction
-
 
 Protect is a website built in Django using Python, JavaScript, CSS and HTML. 
 
@@ -34,27 +79,11 @@ Protect is a website built in Django using Python, JavaScript, CSS and HTML.
 -  Site User Goals:
     - Can easily find the product that they locking for.
     - Have a great user experience.
-    - Can purchase Antivirus program easily.
-
-
-## Table of Contents
-* [Features](#features)
-     - [Future Enhancements](#future-enhancements)
-     - [Web Marketing](#web-marketing)
-* [Design/UX](#design)
-     - [Wireframes](#wireframes)
-     - [Model Schema](#model-schema)
-* [Technologies Used](#technologies-used)
-* [Agile Development](#agile-development)
-* [Testing](#testing)
-* [Deployment](#deployment)
-* [Release History](#release-history)
-* [Credits](#credits)
+    - Can purchase Antivirus program easily. And aslo validate their licens key and download it.
 
 
 ## Features
 
-### Existing Features
 
 ### Navigation
 - The navigation bar on all pages, allows users to access the key pages.
@@ -64,18 +93,9 @@ Protect is a website built in Django using Python, JavaScript, CSS and HTML.
 - only logged out users can access login and register page.
 - The menu collapses to a toggler on smaller screens, leaving the account, search and ordersheet and burger menu links in the navbar allowing for easy navigation across all device sizes.
 
-- Navigation on large screen
-
-    ![]()
-
-- Navigation on smaller screen
- 
-    ![]()
-
 ### Footer
-- Links to the site's social media pages are provided in the footer.
-- The footer also provides navigation to other important parts of the site including the Contact, FAQ page and Privacy.
-![]()
+- Links to the site's social media pages ( Facebook) are provided in the footer.
+- The footer also provides navigation to other important parts of the site including the Contact and Privacy Policy.
 
 ### Home Page
 The home page is divided into different sections.
@@ -83,81 +103,55 @@ The home page is divided into different sections.
 - A hero image with a link to the All Products page and some text content to boost SEO (Search Engine Optimisation).
 ![](/media/readme/startsida.png)
 
-- The Recently Added Products section displays the most recently added eight products. 
-![]()
-
-- The comments section displays bootstrap carousel reviews. 
-
-    It shows the product image, who reviewed it and the review details.
-
-![](Rewiev screenshot here)
-
+- The Recently Added Products section displays the recently added products in the navbar checkout,
 
 ### Products Page
 
-![](/media/readme/products.png)
+![](/media/readme/Products.png)
 - The All Products page displays all the products available on the website. 
-- The user has the option to sort the products by various categories. JA ELLER NEJ?
+- The user has the option to sort the products by various categories and price.
 - Once the user clicks on the product, they go to the product details page.
 - A sale tag is added automatically if product is on sale along with the original price
-
 - Edit, Delete options are displayed on this page when the superuser/admin is logged in.
-![](Screenshot här)
 
-### Search Page
-- The search page searches for the products and displays on the page.
-
-    ![](docs/screenshot/features/search.png)
 
 ### Product Details Page
 
 - The product detail page provides additional information about the products
 - The user can choose the units of the product they wish to purchase
-- A comment form is displayed in the review section for registered users to leave a comment.
-- Review of the product is displayed if there is a review available on that product.
+- Edit, Delete options are displayed on this page when the superuser/admin is logged in.
 
-    ![](docs/screenshot/features/product-detail.png)
+![](docs/screenshot/features/product-detail.png)
 
-### Ordersheet Page
-
-- The Ordersheet page provides a summary of the items in the ordersheet and total prices.
-- The page calculates prices of items automatically if an item is on sale.
-- The user may easily make their final purchasing decisions because they have the opportunity to update or remove goods from the ordersheet.
-
-    ![](docs/screenshot/features/ordersheet.png)
 
 ### Checkout Page
-
- ![](/media/readme/checkout.png)
-
 - The checkout page is intended to make it easy for a user to make purchase.
 - Only registered users can save their info for future purchase.
 - It also shows the summary of the products so that the user knows what they are purchasing before making the payment.
 - The page gives the buyer an option to create an account if they wish to save their details for future.
 
-    ![](docs/screenshot/features/checkout.png)
+ ![](/media/readme/checkout.png)
 
-### Checkout Success Page
-- Once the order has been processed, a checkout success page is loaded to let the customer know whether or not their purchase was successful.
-- An email of the order confirmation is also sent to the user.
+### Ordersheet Page
 
-    ![](docs/screenshot/features/checkout-success.png)
+- When the order has been complited the user land on ordersheet page.
+- The Ordersheet page provides a summary of the items in the ordersheet and total prices.
+- The page calculates prices of items automatically if an item is on sale.
+- The user may easily make their final purchasing decisions because they have the opportunity to update or remove goods from the ordersheet.
 
-* [Back to table of contents](#table-of-contents) 
-* [Back to top of README.md](#policyshop) 
+    ![](/media/readme/ordersheet.jpg)
 
 
 ### Profile Page
 - A registered user can easily access their order history and modify their default shipping information on their profile page.
 - User can also update their information.
-    ![](docs/screenshot/features/profile.png)
+- The user can view their purchased product license. 
+    ![]()
 
 
 ### Contact Page
 - The Contact page displays the imaginary address of the company office and its location on the map.
-- It also gives users the option to send a quick message about their queries.
-- The admin can view the message in the admin panel. 
-- The admin does not have option to reply back to the message but that can be added in the future feature
+- It also gives users the option to click on the botton to contact us.
 
     ![](Screenshot på kontaktdelen)
 
@@ -167,335 +161,95 @@ The home page is divided into different sections.
 - It also gives the user a way to get back to the home page with a link.
 - The 500 error page also provides response if something goes wrong in the code on the server, with a way to recover, without debug messaging.
 
-    ![]()
 
 ### Forgot Password
 - If a user forgets their password they can reset it. 
 - They will be asked to enter their email, and the site will send them an email with a link to reset their password.
-- User will be asked to enter their password twice for confirmation.
-
+- User will be asked to enter their new password twice for confirmation.
 - password reset form
-    ![](docs/screenshot/features/forgotpw1.png)
+ 
+### Register Page
+ Users can register on this page. 
+If they are already registered, the page gives them a link to the Login page.
 
-- password reset confirmed form
-    ![](docs/screenshot/features/forgotpw2.png)
+### Login
 
-- email received to reset password
-    ![](docs/screenshot/features/forgotpw3.png)
+Users can log in on this page. 
+If they are not registered, there is a link to the register page.
 
-- page to reset password
-    ![](docs/screenshot/features/forgotpw4.png)
+### Contact Page
 
-## Future Enhancements
+Users can view company details and they can fill up the form contact us.
+![]()
 
+## Future ideas
 
-Future Enhancements user stories [here](länk till vad jag vill erbjuda i framtiden. tex kunna boka en tid direkt, och kunna följa när ordrar skickas osv)
-
-### Other future features
-- Could add product consulting availability hours and displays next date work can be started and completed.
-- Could add an order tracking page with ordersheet linked to multiple delivery options to allow clients to monitor order delivery and scheduling.
-- Could add a 'Favourite' button where clients can save services to their favourites for later use. 
+- Devolope a antivirus software program
+- Add more product for security
+- Could add a 'Favourite' button where clients can save products to their favourites for later use. 
 - Could enable Site admin to respond to a message on the site
-- Could enable Site admin to respond to and/or delete a comment on the site
-- The example app used sizes for products i.e. XS, S, M, L, XL. I don't use product sizes for consulting services and time, but am considering changing to hours, days, weeks etc in a future version.
-
-## Ecommerce Buisness Model
-
-### Executive summary
-
-Protect is a business to consumer (B2C) ecommerce site for users (consumers) that help costumers to have a a
-secure it products on their computer. So they can have a virusfree computer.
-  - A user is able to purchase a chosen product.
-  - With the user stored information (eg. Name, address), we as a company will <br>
-    order the relevant parts in advance based on the users needs and requirements, <br>
-    travel to the customer site and carry out the service they purchased.
-  - For repeat or returning users/consumers, they are able to log in to their account, <br>
-    check when the last service was carried out <br>
-    and purchase a repeat product or a different product at their leisure<br>
-  - Users are able to signup to our newsletter for special offers and discounts<br>
-  - Social media has been utilised to drive traffic to the website to aid in further purchases
-
-### Web Marketing
-The use of social media marketing is very important for bringing in customers and increasing visibility of the site. 
-The approved way to generate interest is an organic approach as the marketing budget will be small initially.
-
-Facebook marketing is often more important than any other platform, we are using it for this project. and created a page which may still be visible [here](https://www.facebook.com/profile.php?id=61550857243246)
 
 
-  ![](/media/readme/facebook%20protect.png)
 
-### Search Engine Optimization
-The meta keywords and description in base.html have been amended to the researched keywords. Also in i about us page. In base.html we also have use good content for SEO in meta tags. All Keywords is also placed in a meta tag in the head of base.html.
 
-On significant pages like the index and about us pages, the site title has the name Protect and also has keywords. 
 
-The homepage has also been designed with SEO in mind. 
-
-For SEO purposes, we have also added a sitemap.xml and robots.txt file to the website's root directory for search engines to crawl the site. 
-
-A sitemap is a method of classifying a website, indicating the URLs and the information contained within each section.
-The URLs on your website that a search engine crawler is permitted to visit are specified in a robots.txt file.
-
-![](docs/screenshot/others/SEO-keywords.png)
-
-## Design
-The website is created to look good and be easy to use, and also making it possible for a customer to browse and buy products and services of interest quickly and easily.
-Wireframes for desktop, tablet, and mobile views were produced and only few colors were used to maintain the ARIA accessibility of the website.
-
-- ## Wireframes
-wireframes for the project were created using [Balsamiq](https://balsamiq.com/)SKA JAG ANVÄNDA DEN ELLER KÖRA ANNAT
-
-* [Back to table of contents]() 
-* [Back to top of README.md]() 
-
-- Home Page 
-
-    ![]()
-
-- Product Page
-
-    Product page displays all the products available in the store.
-![]()
-
-- Product Details Page
-
-    Displays the details of the product. Users can add products to their ordersheet. 
-    They can also +/- the amount of products and update the bag from here.
-    
-![]()
-
-- Register Page
-
-    Users can register on this page. 
-    If they are already registered, the page gives them a link to the Login page.
-    ![]()
-
-- Login
-
-    Users can log in on this page. 
-    If they are not registered, there is a link to the register page.
-    
-    ![]()
-
-- Ordersheet
-
-    Users can add items to their ordersheet. 
-    This page gives them options to increment or decrement their products as well as to remove them.
-    
-    ![]()
-
-- Checkout Page
-
-    Users can enter their shipping and card details to make a purchase. 
-    The user must create an account to save their details for future use.
-    
-    ![]()
-
-- Checkout Success Page
-
-    Once the checkout is complete, the user is redirected to checkout success page, where they can see their order details and shipping details.
-    
-    ![]()
-
-- Contact Page
-
-    Users can view company details and they can fill up the form contact us.
-    
-    ![]()
-
-- ## Color Schema
-
-The color palette for this project was kept as simple as possible in order to maintain the contrast between the background and the foreground.
-
-**[Homepage to Coolers](https://coolors.co/)**
-
-![](/media/readme/Coolers.png)
-
-- ## Model Schema
+## Model Schema
 
 Two relational databases were used to create the site. 
 The builtin Django SQLite database was used for development and then Elephant SQL Postgres for the deployed version. 
-
-LÄNKA TILL VAR OCH HUR DET SER UT I MODELSCHEMA
-
 The site is based around a number of models separated into the following main groups.
 
-**Product Models**
-
-![]()
-
-**Category** - stores the details of a product category.
-
-- **Product** - stores all the details about a product for sale. Connected to the featured product, recently added products and Category objects via foreign key relationships.
-
-![](/media/readme/Products.png)
-
-- **Review / Comments** - stores a user review of a product and is connected to the Product and by foreign key relationships.
-
-![]()
-
-* [Back to table of contents](#table-of-contents) 
-* [Back to top of README.md](#policyshop) 
+![](/media/readme/db-model-protect.png)
 
 
-**User Models**
+**Product model**
+ 
+*Category* - stores the details of a product category.
 
-- **User** - the Django Allauth user model containing information such as username and password.
-- **Profile** - stores a users default delivery information and is connected to the User via a one to one relationship.
+*Product* - stores all the details about a product for sale. Connected to the featured product, recently added products and Category objects via foreign key relationships.
 
-![]()
+**User model**
 
+ *User* - the Django Allauth user model containing information such as username and password.
+
+ *Profile* - stores a users default delivery information and is connected to the User via a one to one relationship.
 
 **Order Models**
 
-- **Order** - a foreign key relationship connects the user profile to the storage of the complete order data.
-- **OrderLineItem** - stores the product information for a single product purchased on an order. Foreign key relationships connect the product and order.
+ *Order* - a foreign key relationship connects the user profile to the storage of the complete order data.
 
-![]()
-
+ *OrderLineItem* - stores the product information for a single product purchased on an order. Foreign key relationships connect the product and order.
 
 ## Agile Development
 
-
-To see the list of [issues]() click [here]()
-
-This project was started with my GitHub Projects [Page]() to track and manage the [issues]() such as expected epics, user stories, milestones and other work and sprints involved.
+This project was started with my GitHub Projects [Page](https://github.com/saram88/Protect) to track and manage the [issues](https://github.com/saram88/Protect/issues) such as user stories, milestones and other work and sprints involved.
 The purpose of Agile Development is to plan and measure progress for expected work and tasks, by listing the epics and then break them down into user stories or smaller tasks to ultimately finish the site in the allocated time.
 
 At the initial stages I decided on core requirements ('must have' issues) for the project and some 'could have' issues but not critical requirements.
 
-From these I added the associated Epics, user stories, acceptance criteria and the tasks so I can track my work effectively.
-I did also use [milestones]() as another way to visualise Epic completion status.
+From these I added the associated user stories, acceptance criteria and the tasks so I can track my work effectively.
+
 
 Once I completed a task I note the item as completed and if all parts of this story were completed I would move it from **In Progress** to **Done** on the board. Acceptance criteria would also be noted where appropriate.
 
-At the end of a coding session I would update the user stories with a comment of:
-
- - What was done
- - What is left to be done
- - Reminders to track where I finished so subsequent work would follow.
-
-#### Epics
-
-##### Completed Epics
-
-1. [EPIC: Initial Project Setup]()
-2. [EPIC: The Home Page]()
-3. [EPIC: Setup Services and Products]()
-4. [EPIC: Order Processing]()
-5. [EPIC: User profiles]()
-6. [EPIC: Site and Product Admin]()
-7. [EPIC: Additional Features]()
-8. [EPIC: SEO and Web Marketing]()
-9. [EPIC: Testing]()
-10. [EPIC: User CRUD for orders (and profiles)]()
-
-#### User stories
-
-#####  Completed User Stories
+### Epics and userstorys
 
 To view details of the user stories please click on a user story below.
-See the project page for the full [list of issues]() to see the details and comments.
-See the page [here]()
-
- 1. [USER STORY: Setup Authentication]
- 2. [USER STORY: Setup Base Page]
- 3. [USER STORY: Setup Home Page (index.html)]
- 4. [USER STORY: Product and services setup]
- 5. [USER STORY: Product Filtering]
- 6. [USER STORY: Product Searching]
- 7. [USER STORY: Product Sorting]
- 8. [USER STORY: Order Processing Setup]
- 9. [USER STORY: Adding Products]
- 10. [USER STORY: Adjusting and Deleting Products]
- 11. [USER STORY: Checkout]
- 12. [USER STORY: Purchasing with Stripe]
- 13. [USER STORY: NOtifications, Messages, Toasts]
- 14. [USER STORY: Setup User profiles]
- 15. [USER STORY: Adding Users with Profiles]
- 16. [USER STORY: Adjust allauth default pages]
- 17. [USER STORY: Adjusting user profile and default delivery info]issues/22)
- 18. [USER STORY: Adding Order History to User Profile]
- 19. [USER STORY: Stripe Webhooks to catch delays/errors]
- 20. [USER STORY: Notifications from Profile info]
- 21. [USER STORY: Adding Products to catalog as Admin]
- 22. [USER STORY: Editing Products as Admin]
- 23. [USER STORY: Deleting Products as Admin]
- 24. [USER STORY: Adjusting admin+allauth forms format]
- 25. [USER STORY: Adjust models for new PP5 data/features]
- 26. [USER STORY: FAQ app/model]
- 27. [USER STORY: Contact app/model]
- 28. [USER STORY: Privacy app/model]
- 29. [USER STORY: SEO Features]
- 30. [USER STORY: Web marketing and FB]
- 31. [USER STORY: e-commerce business model]
- 32. [USER STORY: Testing]
- 33. [USER STORY: account registration]
- 34. [USER STORY: Create order for me only]
- 35. [USER STORY: Update order for me only]
- 36. [USER STORY: Delete my orders only]
- 37. [USER STORY: Setup CSS]
- 38. [USER STORY: Site Menu]
-
-
-The following User stories were not completed as they are possible future features:
-
- ##### Future Feature User stories
-
- 39. [USER STORY: Consulting Service Bookings]()
- 40. [USER STORY: Social Media Login]()
-
-I decided against implementing some future features at this time due to deadlines and because the core requirements of the project have been satisfied elsewhere.
-
-
-## Testing
-
-Testing is in different sections and individually tested with test cases developed for each function.
-
-Details of the [testing]() procedures and methodology can be found in the testing.md file [here](/docs/testing/TESTING.md)
-
-I got automated testing to work for most of the models, with up to % coverage overall, according to the coverage [report](/report.txt)
-
-Details of the [testing](/docs/testing/TESTING.md) procedures and methodology can be found in the testing.md file [here](/docs/testing/TESTING.md)
-
-The site was also tested for responsiveness here https://www.browserstack.com/responsive and here https://ui.dev/amiresponsive
-
-
-> Responsive Examples of Live Site
-
-![Responsive Site examples](docs/testing/responsive.png)
-
- - The site is fully responsive across multiple screen sizes and devices. 
-
- I had to carry out significant security research, updates and testing to get this test to work.
-
-
-
-### Bugs of note
-
-
-
-### Development bugs: 
-
-#### fixed 
-
-
+See the project page for the full [list of issues](https://github.com/saram88/Protect/issues) to see the details and comments.
 
 ## Technologies Used
 
-
-- ## Language Used
+### Language Used
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
 - [CSS3](https://en.wikipedia.org/wiki/CSS)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-- ## Frameworks Used
+### Frameworks Used
 - [Django](https://www.djangoproject.com/) - A high-level Python web framework for rapid development with clean, pragmatic design.
-
 - [Bootstrap](https://getbootstrap.com/) - A framework for building responsive, mobile-first sites.
 
-- # Libraries Used
+### Libraries Used
 - [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - is used for user authentication, registration & account management to the site.
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - is used to add bootstrap styling to the forms used.
 - [Django Countries](https://pypi.org/project/django-countries/) - is used for the country CountryField in the checkout page.
@@ -515,12 +269,11 @@ The site was also tested for responsiveness here https://www.browserstack.com/re
 - [psycopg2](https://pypi.org/project/psycopg2/) - database adapter which allow us to connect with a postgres database
 - [boto3](https://pypi.org/project/boto3/) - Allows connection to AWS S3 bucket
 
-
-- ## Database Used
+### Database Used
 
 [ElephantSQL](https://www.elephantsql.com/) for deployment to heroku.
 
-- ## Stripe
+### Stripe
 [Stripe](https://stripe.com/gb) has been used for the payment for this website.
 
 The developer mode in Stripe allows us to use and process test payments.
@@ -530,17 +283,16 @@ Type | card No | Expiry | CVC | ZIP
 Success | **4242 4242 4242 4242** | A date in the future | Any 3 digits| Any 3 digits
 Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 digits| Any 5 digits
 
-# E-commerce Business Model
+## E-commerce Business Model
 
-## Web Marketing Strategies
+### Web Marketing Strategies
 - The following strategies for Test a Virus and VPN have been considered and a combination of strategies can be implemented as the company grows.
 - For an online service, word of mouth will be the strongest tool alongside online support as described below. Whit person that work in company and talk to college in other company.
 
-## Facebook Business Page
+### Facebook Business Page
 
 ![](/media/readme/facebook%20protect.png)
 
- 
 
 - The Facebook Business page for Test a Protect will be set up as an initial entry into the social media marketing space. 
 - It would be beneficial to set up an Instagram page that can link with Facebook and allow for more engagement with the target market.
@@ -549,9 +301,9 @@ Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 d
 - Brand campaigns can be developed e.g. interviewing customers and getting testimonials.
 - Paid Instagram and Facebook ads can be used as a driver to the website.
   
-## Newsletter Signup & Email Marketing
+### Newsletter Signup & Email Marketing
 
-!![](/media/readme/Mailshimp.png)
+![](/media/readme/Mailshimp.png)
 
 - The newsletter can allow more detail and article-type content to be delivered to those who opt-in. 
 - This can begin as a monthly update and can increase to weekly once a larger audience is established.
@@ -559,23 +311,38 @@ Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 d
 - Testing of approaches can be easily done to see which content generates referrals and sales. 
 - If there are competitions, offers, or information accouterments this channel can assist in information sharing with customers.
 
-## SEO
+### SEO
 - The content of the website was written inspired by real-business operating sites with similar content without the use of keyword stuffing as a bad practice.
 - The website was designed to extend additional meta descriptions and keywords as the site grows.
 - For now, the home and services page are SEO optimised which can be reworked if Google Adwords are implemented at a later stage.
 - There is a [robots.txt](https://github.com/saram88/Protect/blob/df4c99365800fe04c38297b4a6959b65bd38fd8a/robots.txt) and [site-map.xml](https://github.com/saram88/Protect/blob/df4c99365800fe04c38297b4a6959b65bd38fd8a/sitemap.xml) for search engine crawlers and proper indexing.   
 
-## Paid Advertising
+### Paid Advertising
 - For the size of this business, it would be beneficial to look at how social media advertising can drive traffic to the website with engaging content that is relatable to the customer.
 
-## Links
+### Links
 - social links and other links that go outside the domain have `rel="nofollower"` to signal to search engines that those links are not associated with our specific domain
+
+### Design
+The website is created to look good and be easy to use, and also making it possible for a customer to browse and buy products of interest quickly and easily.
+For desktop, tablet, and mobile devices, where produced and only few colors were used to maintain the ARIA accessibility of the website.
+
+
+### Color 
+
+The color palette for this project was kept as simple as possible in order to maintain the contrast between the background and the foreground.
+
+**[Homepage to Coolers](https://coolors.co/)**
+
+![](/media/readme/Coolers.png)
 
 
 ## Deployment
-( Ta från annan  readme jag har uppe efter genomgång med Niklas)
 
-The site has been deployed to Heroku at [/](https://saram88-protect-d3535879dbc8.herokuapp.com/products/)
+The site has been deployed to Heroku at [Here](https://saram88-protect-d3535879dbc8.herokuapp.com)
+
+To se specifide detail about the deplyment, see deployment.md file
+
 ## Bugs
 
 - The minus unit and year button in the bag is meant to be disabled when the number hits 1. Which works on small screens after this refactor. However, this does not work on larger screens.
@@ -599,16 +366,25 @@ I try to follow this manual, if you want to read more [Here](https://developer.c
 
 ### HTML W3 Validation
 
+![HTML ✅ ](/media/readme/htmlchecker.jpg)
+Result: Pass - No Errors
 
 ## CSS Validation
 
-Here is a link to the validate result [Here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsaram88-protect-d3535879dbc8.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)  
+Here is a link to the validate result that you also can use for future if i want to validate it again if i chnage something. [Here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsaram88-protect-d3535879dbc8.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)  
+
+Result: Pass - No Errors
 
 ![W3 Validation checker](/media/readme/testcss.jpg)
 
 ## JS validator
 
 ![jshint.com](/media/readme/testjs.png)
+Result: Pass - No Errors
+
+## PyLint Validation
+![https://pep8ci.herokuapp.com](/media/readme/testpy.jpg)
+Result: Pass - No Errors - and same across all files for pylint addin for Gitpod/VSCode.
 
 ## Credits
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
@@ -623,6 +399,7 @@ Here is a link to the validate result [Here](https://jigsaw.w3.org/css-validator
 - GitPod - IDE
 - https://www.privacypolicygenerator.info/( for pravicy policys)
 - https://www.wordtracker.com/ ( keywords SEO)
+- https://stackoverflow.com ( for different code issues)
 
 
 ## Source code
@@ -636,7 +413,7 @@ Here is a link to the validate result [Here](https://jigsaw.w3.org/css-validator
 - favicon.ico generation https://favicon.io/favicon-generator/
 - Colors from [Coolors](https://coolors.co/)
 
-### Contact me
+# Contact me
 
 - Sara Mentzer [LinkedIn](https://www.linkedin.com/in/sara-mentzer-17b9b1170/)
 - Sara Mentzer [GitHub](https://github.com/saram88)
