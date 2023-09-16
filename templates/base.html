@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+    <head>
 
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -39,11 +39,10 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Protect {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
+        <title>Protect {% block extra_title %}{% endblock %}</title>
+    </head>
+    <body>
     <header class="container-fluid fixed-top">
-        
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -111,20 +110,20 @@
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
-      </div>
+        </div>
 
       <!--Mailshimp-->
 
-      <script id="mcjs">
-        !function(c,h,i,m,p) {
-            ((m = c.createElement(h)),
-            (p = c.getElementsByTagName(h)[0]),
-            (m.async = 1),
-            (m.src = i),
-            p.parentNode.insertBefore(m, p))
-        }
-        (document,"script","https://chimpstatic.com/mcjs-connected/js/users/b9ec6062e658028c4ad88785d/00de1c87a9de46627617235f9.js");
-      </script>
+        <script id="mcjs">
+            !function(c,h,i,m,p) {
+                ((m = c.createElement(h)),
+                (p = c.getElementsByTagName(h)[0]),
+                (m.async = 1),
+                (m.src = i),
+                p.parentNode.insertBefore(m, p))
+            }
+            (document,"script","https://chimpstatic.com/mcjs-connected/js/users/b9ec6062e658028c4ad88785d/00de1c87a9de46627617235f9.js");
+        </script>
     </header>
 
 
@@ -151,6 +150,8 @@
 
     {% block content %}
     {% endblock %}
+    
+    <!-- Empty row for mobile view -->
 
     <div class="d-block d-md-none">
         <div class="row">
@@ -163,12 +164,14 @@
             <a class="m-2 text-white" href="/about/">About us</a>
             <a class="m-2 text-white" href="https://www.privacypolicygenerator.info/live.php?token=c9IPgeT0y1Wth0Q02xItyNfOspPRTqwU" title="Privacy Policy" target="_blank">Privacy Policy</a>
         </div>
+
         <!-- socials -->
         <div class="social-networks">
             <a class="m-2 text-white" rel="noopener" href="https://www.facebook.com/profile.php?id=61550857243246" role="button" target="_blank" aria-label="link to facebook">
                 <i class="fab fa-facebook" aria-hidden="true"></i>
             </a>
         </div>
+        
         <!-- Copyright -->
         <div class="d-none d-md-block">
             <p class="copyright">Copyright
