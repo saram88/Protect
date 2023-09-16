@@ -583,6 +583,29 @@ The reason for this is because during this code refactoring, the instructor uses
 
 ![](/media/readme/protectbug.png)
 
+## Testing
+
+### Google Lighthouse Testing
+
+The lighthouse results do vary depending on Internet contention and time of day, affecting the load times for linked resources such as bootstrap, fonts, css and js.
+The necessary bootstrap modules, particularly for Popper dropdown menus and Stripe functionality do add siginificant load, but are essential.
+Even with preload statements they still take time to load, so the Lighthouse performance stat is as good as it can be at this time.
+I did also try using Cloudinary responsive image features, but found it added further load.
+So I managed to get good results by using WEBP file type for images, especially now that Apple IoS supports webp.
+
+I try to follow this manual, if you want to read more [Here](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/?utm_source=lighthouse&utm_medium=devtools)
+
+![](/media/readme/testchrome.jpg)
+
+### HTML W3 Validation
+
+
+## CSS Validation
+
+Here is a link to the validate result [Here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsaram88-protect-d3535879dbc8.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)  
+
+![W3 Validation checker](/media/readme/testcss.jpg)
+
 ## Credits
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
 - https://www.geeksforgeeks.org/ - code solutions
