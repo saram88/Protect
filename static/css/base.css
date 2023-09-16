@@ -8,6 +8,10 @@ body {
 }
 
 /* Navigation */
+.navbar {
+    padding-left: 0;
+}
+
 .navbar-collapse {
     background-color: #222;
 }
@@ -365,6 +369,10 @@ a.category-badge > span.badge:hover {
 
     .nav-link i.fa-lg {
         font-size: 1rem;
+    }
+
+    .navbar {
+        padding-left: 1rem;
     }
 
     .navbar-toggler {

@@ -576,6 +576,12 @@ Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 d
 ( Ta från annan  readme jag har uppe efter genomgång med Niklas)
 
 The site has been deployed to Heroku at [/](https://saram88-protect-d3535879dbc8.herokuapp.com/products/)
+## Bugs
+
+- The minus unit and year button in the bag is meant to be disabled when the number hits 1. Which works on small screens after this refactor. However, this does not work on larger screens.
+The reason for this is because during this code refactoring, the instructor uses the unity year-form twice, and hides one or the other depending on the screen size. However, as the unity year-form uses an ID to identify itself, only the first element within the HTML with that ID is picked up by the corresponding code. Even though you can only see one form at a time in the browser, they both exist within the HTML.
+
+![](/media/readme/protectbug.png)
 
 ## Credits
 - The Code Institute 'Boutique Ado' walkthrough project assisted and guided in the setup and basic structure of this project.
