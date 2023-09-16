@@ -1,0 +1,16 @@
+[
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001730010",
+        "name": "Antivirus Extra",
+        "description": "Antivirus Extra",
+        "price": 68.99,
+        "category": 1,
+        "rating": 4.7,
+        "image_url": "",
+        "image": "antivirus-extra.png"
+      }
+    }
+]

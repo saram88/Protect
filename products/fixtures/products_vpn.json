@@ -1,0 +1,16 @@
+[
+    {
+      "pk": 4,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001890157",
+        "name": "VPN Secure Connection",
+        "description": "Safe. Private. Fast.",
+        "price": 35.99,
+        "category": 2,
+        "rating": 3,
+        "image_url": "",
+        "image": "vpn.png"
+      }
+    }
+  ]

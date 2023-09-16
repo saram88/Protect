@@ -1,8 +1,5 @@
-
-![CI logo](/media/readme/frame.jpg)
-
+![CI logo](/media/readme/protect-logo.png) 
 # Welcome to Protect shop
-
 This is my Code Institute student PP5 final project Protect shop readme.
 The live link and my GitHUb reprosity you can find here:
 
@@ -52,6 +49,7 @@ Use the test card number 4242 4242 4242 4242 with a future expiration date, a th
     - [Paid Advertising](#paid-advertising)
     - [Links](#links)
     - [Design](#design)
+        - [Logo](#logo)
     - [Color](#color)
 * [Deployment](#deployment)
 * [Bugs](#bugs)
@@ -327,6 +325,10 @@ Require authorisation | **4000 0027 6000 3184** | A date in the future | Any 3 d
 The website is created to look good and be easy to use, and also making it possible for a customer to browse and buy products of interest quickly and easily.
 For desktop, tablet, and mobile devices, where produced and only few colors were used to maintain the ARIA accessibility of the website.
 
+### Logo ###
+For this project i create my own logo in Canva desgin. The logo also stand for all products but then whit different colors. The logo have something in it that make you think about protection and make the user to feel secure and get a good impression of the Company.   
+
+![](/media/readme/protect-logo.png)
 
 ### Color 
 
