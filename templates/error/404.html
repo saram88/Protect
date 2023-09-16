@@ -3,25 +3,35 @@
 
 {% load static %}
 
+
+{% block page_header %}
+    <div class="container header-container d-none d-md-block">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
 
 <!-- 404 ERROR -->
-<div class="container">
-    <div class="row">
-        <div class="col-12 page-header">
-            <h2 class="text-uppercase">404 Error</h2>
+<div class="overlay"></div>
+    <div class="container about-containter">
+        <div class="row">
+            <div class="col">
+                <h2 class="logo-font mb-4">404 Error</h2>
+                <hr> 
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="justify-content-center error">
-                <h4>Page Not Found</h4>
-                <br>
+        <div class="row">
+            <div class="col col-lg-12">
+                <p>
+                    <h3>Page Not Found</h3> 
+                </p>
                 <p>Sorry! The page you're looking for doesn't exist. Click below to return to the homepage.</p>
                 <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 btn-lg">Home</a>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

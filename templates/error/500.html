@@ -3,25 +3,34 @@
 
 {% load static %}
 
-{% block content %}
-
-<!-- 404 ERROR -->
-<div class="container">
-    <div class="row">
-        <div class="col-12 page-header">
-            <h2 class="text-uppercase">500 Error</h2>
+{% block page_header %}
+    <div class="container header-container d-none d-md-block">
+        <div class="row">
+            <div class="col"></div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="justify-content-center error">
-                <h4>Server Error</h4>
-                <br>
+{% endblock %}
+
+
+{% block content %}
+
+<!-- 500 ERROR -->
+<div class="overlay"></div>
+    <div class="container about-containter">
+        <div class="row">
+            <div class="col">
+                <h2 class="logo-font mb-4">500 Error</h2>
+                <hr> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-12">
+                <p>
+                    <h3>Server Error</h3> 
+                </p>
                 <p>Sorry! Protect can't handle this request at the moment. Please return to the home page.</p>
                 <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0 btn-lg">Home</a>
             </div>
         </div>
     </div>
-</div>
-
 {% endblock %}
