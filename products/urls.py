@@ -29,6 +29,11 @@ urlpatterns = [
         name='add_review'
     ),
     path(
+        'review/delete/<int:review_id>/',
+        views.delete_review,
+        name='delete_review'
+    ),
+    path(
         'download/<path>/',
         views.download_file,
         name='download_file'

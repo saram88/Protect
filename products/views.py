@@ -158,6 +158,7 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def add_review(request, product_id):
     """ Add review on product """
 
@@ -193,6 +194,19 @@ def add_review(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Delete a review from the product """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('products'))
+
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('products'))
 
 
 def download_file(request, path):
