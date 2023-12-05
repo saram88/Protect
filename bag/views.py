@@ -33,14 +33,19 @@ def add_to_bag(request, item_id):
             cart["year"][0] += year
             cart["unit"][0] += units
             bag[item_id] = json.dumps(cart, default=set_default)
-            
+            messages.warning(
+                request,
+                f'Note! Since you already have {product.name} in your bag, \
+                    this purchase will append existing year and units \
+                    for this product.'
+            )
             messages.success(
                 request,
                 f'Updated {units} {product.name} with {year} to \
                     {cart["unit"][0]} units. \
                     Note! Since you already have {product.name}  \
                     in your bag, this purchase will append existing  \
-                    year and units for this product.'
+                    year and units for this product'
             )
         else:
             bag[item_id] = json.dumps(
@@ -78,7 +83,7 @@ def adjust_bag(request, item_id):
         bag[item_id] = json.dumps(cart, default=set_default)
         messages.success(
             request,
-            f'Updated X {units} {product.name} with {year} to " \
+            f'Updated {units} {product.name} with {year} to " \
             {cart["unit"][0]} units'
         )
     else:
