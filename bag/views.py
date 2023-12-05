@@ -42,10 +42,7 @@ def add_to_bag(request, item_id):
             messages.success(
                 request,
                 f'Updated {units} {product.name} with {year} to \
-                    {cart["unit"][0]} units. \
-                    Note! Since you already have {product.name}  \
-                    in your bag, this purchase will append existing  \
-                    year and units for this product'
+                    {cart["unit"][0]} units.'
             )
         else:
             bag[item_id] = json.dumps(
