@@ -38,10 +38,7 @@ def contact(request):
 
     else:
         form = ContactForm()
-#        if 'submitted' in request.GET:
-#            form = ContactForm()
 
-#    form = ContactForm()
     template = 'home/contact.html'
     context = {
         'form': form,
