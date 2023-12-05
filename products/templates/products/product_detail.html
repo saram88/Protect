@@ -118,6 +118,14 @@
                                 </div>
                             </div>
                             <div class="col{% if s %}-12 mt-2{% endif %}">
+                                
+                                <a href="{% url 'add_review' product.id %}" class="btn btn-outline-black rounded-0 mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-light fa-star"></i>
+                                    </span>
+                                    <span class="text-uppercase">Add review</span>
+                                </a>
+
                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>

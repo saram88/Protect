@@ -156,6 +156,36 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
+def add_review(request, product_id):
+    """ Add review on product """
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you have to log in to add a review.')
+        return redirect(reverse('home'))
+    
+#    if request.method == 'POST':
+#        form = ReviewForm(request.POST, request.FILES)
+#        if form.is_valid():
+#            product = form.save()
+#            messages.success(request, 'Successfully added review!')
+#            return redirect(reverse('product_detail', args=[product.id]))
+#        else:
+#            messages.error(
+#                request,
+#                'Failed to add review. Please ensure the form is valid.'
+#            )
+#    else:
+ 
+    form = ReviewForm()
+
+    template = 'products/add_review.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
 def download_file(request, path):
     file_path = os.path.join(settings.MEDIA_ROOT, path)
     if os.path.exists(file_path):

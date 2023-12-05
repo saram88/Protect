@@ -24,6 +24,11 @@ urlpatterns = [
         name='delete_product'
     ),
     path(
+        'review/<int:product_id>/',
+        views.add_review,
+        name='add_review'
+    ),
+    path(
         'download/<path>/',
         views.download_file,
         name='download_file'

@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 
 
@@ -43,3 +44,22 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    RATING_CHOICES = (
+		(1, '1'),
+		(2, '2'),
+		(3, '3'),
+		(4, '4'), 
+		(5, '5'),
+	)
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField(max_length=1000)
+    rating = models.PositiveIntegerField(choices=RATING_CHOICES, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    created_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user.username
