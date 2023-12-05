@@ -159,32 +159,32 @@ def delete_product(request, product_id):
 
 
 def add_review(request, product_id):
-#    """ Add review on product """
+    """ Add review on product """
 
-
-    
-
-    
-
-#    if not request.user.is_authenticated:
-#        messages.error(request, 'Sorry, you have to log in to add a review.')
-#        return redirect(reverse('home'))
-    
-#    if request.method == 'POST':
-#        form = ReviewForm(request.POST, request.FILES)
-#        if form.is_valid():
-#            product = form.save()
-#            messages.success(request, 'Successfully added review!')
-#            return redirect(reverse('product_detail', args=[product.id]))
-#        else:
-#            messages.error(
-#                request,
-#                'Failed to add review. Please ensure the form is valid.'
-#            )
-#    else:
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, you have to log in to add a review.')
+        return redirect(reverse('products'))
     
     product = get_object_or_404(Product, pk=product_id)
-    form = ReviewForm()
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST or None)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.comment = request.POST["comment"]
+            review.rating = request.POST["rating"]
+            review.user = request.user
+            review.product = product
+            review.save()
+            messages.success(request, 'Successfully added review!')
+            return redirect(reverse('products'))
+        else:
+            messages.error(
+                request,
+                'Failed to add review. Please ensure the form is valid.'
+            )
+    else:
+        form = ReviewForm()
 
     template = 'products/add_review.html'
     context = {
