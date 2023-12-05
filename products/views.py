@@ -6,8 +6,8 @@ from django.db.models.functions import Lower
 from django.conf import settings
 from django.http import HttpResponse
 
-from .models import Product, Category
-from .forms import ProductForm
+from .models import Product, Category, Review
+from .forms import ProductForm, ReviewForm
 
 import os
 
@@ -74,9 +74,11 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product_id).order_by("-comment")
 
     context = {
         'product': product,
+        'reviews': reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -156,12 +158,17 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
-@login_required
 def add_review(request, product_id):
-    """ Add review on product """
-    if not request.user.is_authenticated:
-        messages.error(request, 'Sorry, you have to log in to add a review.')
-        return redirect(reverse('home'))
+#    """ Add review on product """
+
+
+    
+
+    
+
+#    if not request.user.is_authenticated:
+#        messages.error(request, 'Sorry, you have to log in to add a review.')
+#        return redirect(reverse('home'))
     
 #    if request.method == 'POST':
 #        form = ReviewForm(request.POST, request.FILES)
@@ -175,12 +182,14 @@ def add_review(request, product_id):
 #                'Failed to add review. Please ensure the form is valid.'
 #            )
 #    else:
- 
+    
+    product = get_object_or_404(Product, pk=product_id)
     form = ReviewForm()
 
     template = 'products/add_review.html'
     context = {
         'form': form,
+        'product': product,
     }
 
     return render(request, template, context)

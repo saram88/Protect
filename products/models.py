@@ -48,11 +48,11 @@ class Product(models.Model):
 
 class Review(models.Model):
     RATING_CHOICES = (
-		(1, '1'),
-		(2, '2'),
-		(3, '3'),
-		(4, '4'), 
-		(5, '5'),
+		(1, 'Poor'),
+		(2, 'Bad'),
+		(3, 'Average'),
+		(4, 'Good'), 
+		(5, 'Excelent'),
 	)
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

@@ -33,7 +33,6 @@ class ReviewAdmin(admin.ModelAdmin):
     )
 
 
-
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CatagoryAdmin)
 admin.site.register(Review, ReviewAdmin)
