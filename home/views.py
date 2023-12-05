@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
+from django.contrib import messages
+from .forms import ContactForm
+
 
 # Create your views here.
 
@@ -19,8 +23,31 @@ def company(request):
 
 
 def contact(request):
-    """ A view to return the contact page """
-    return render(request, 'home/contact.html')
+    """ A view to display the contact form"""
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Your message has been sent!')
+            return redirect(reverse('contact'))
+
+        else:
+            form = ContactForm()
+            messages.warning(request, 'Message not sent. Please try again.')
+
+    else:
+        form = ContactForm()
+#        if 'submitted' in request.GET:
+#            form = ContactForm()
+
+#    form = ContactForm()
+    template = 'home/contact.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
 
 
 def download(request):

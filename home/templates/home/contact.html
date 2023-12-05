@@ -25,6 +25,14 @@
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Contact Us</p>
+                <form action="{% url 'contact' %}" method="POST" id="contact-form" onsubmit="return sendMail(this);"> 
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <br>
+                    <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-3" name="send" id="send" value="Send" />
+                </form>   
+
+                <!--
                 <form id="form" name="form" onsubmit="return sendMail(this);">
                     <label for="contact_name" class="form-label">Name: *</label>
                     <input type="text" class="form-control" name="contact_name" id="contact_name" placeholder="Enter name" required/>
@@ -35,6 +43,7 @@
                     <br>
                     <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-3" name="send" id="send" value="Send" />
                 </form>
+                -->
             </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Where You can Find us</p>
