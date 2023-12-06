@@ -31,6 +31,7 @@ Use the test card number 4242 4242 4242 4242 with a future expiration date, a th
     - [Forgot Password](#forgot-password)
     - [Register Page](#register-page)
     - [Login](#login)
+    - [Review](#review)
 * [Future ideas](#future-ideas)
 * [Model schema](#model-schema)
 * [Agile Development](#agile-development)
@@ -119,7 +120,7 @@ The home page is divided into different sections.
 - The user can choose the units of the product they wish to purchase
 - Edit, Delete options are displayed on this page when the superuser/admin is logged in.
 
-![](docs/screenshot/features/product-detail.png)
+![](/media/readme/protect-message-adding-same-product-to-bag.png)
 
 
 ### Checkout Page
@@ -127,6 +128,8 @@ The home page is divided into different sections.
 - Only registered users can save their info for future purchase.
 - It also shows the summary of the products so that the user knows what they are purchasing before making the payment.
 - The page gives the buyer an option to create an account if they wish to save their details for future.
+
+- When you add a product that is already in the shopping bag, the number of units and year is automatically added to the existing product that is in the shopping bag.A warning text is displayed when the product is added.
 
  ![](/media/readme/checkout.png)
 
@@ -151,7 +154,9 @@ The home page is divided into different sections.
 - The Contact page displays the imaginary address of the company office and its location on the map.
 - It also gives users the option to click on the botton to contact us.
 
-    ![](Screenshot på kontaktdelen)
+- When you go to "Contact us" the form is updated. Everything that is sent is stored in the database as well, under the Contact model
+
+    ![](/media/readme/protect-contact-form.png)
 
 ### Error 404 Page and 500 error Page
 
@@ -180,6 +185,12 @@ If they are not registered, there is a link to the register page.
 Users can view company details and they can fill up the form contact us.
 ![]()
 
+### Review
+
+Users can add reviews on individual products. Only logged-in users can add reviews. A created review cannot be modified or deleted by users.
+Only superuser users can delete reviews.
+![](/media/readme/protect-adding-product-review.png)
+
 ## Future ideas
 
 - Devolope a antivirus software program
@@ -187,17 +198,13 @@ Users can view company details and they can fill up the form contact us.
 - Could add a 'Favourite' button where clients can save products to their favourites for later use. 
 - Could enable Site admin to respond to a message on the site
 
-
-
-
-
 ## Model Schema
 
 Two relational databases were used to create the site. 
 The builtin Django SQLite database was used for development and then Elephant SQL Postgres for the deployed version. 
 The site is based around a number of models separated into the following main groups.
 
-![](/media/readme/db-model-protect.png)
+![](/media/readme/protect-db-diagram.png)
 
 
 **Product model**
@@ -470,3 +477,5 @@ Result: Pass - No Errors
 
 - Sara Mentzer [LinkedIn](https://www.linkedin.com/in/sara-mentzer-17b9b1170/)
 - Sara Mentzer [GitHub](https://github.com/saram88)
+
+[def]: #login
