@@ -35,8 +35,8 @@ def bag_contents(request):
                     total += (y * units * new_price)
                     product_price = round(new_price, 2)
                 else:
-                    total += (y * units * product.price)
-                    product_price = product.price
+                    total += (y * units * float(product.price))
+                    product_price = round(product.price, 2)
 
                 product_count += units
                 bag_items.append({

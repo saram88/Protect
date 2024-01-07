@@ -24,9 +24,9 @@ def add_to_bag(request, item_id):
     year = int(request.POST.get('years'))
     redirect_url = request.POST.get('redirect_url')
 
-    year = None
-    if 'unit_year' in request.POST:
-        year = request.POST['unit_year']
+#    year = None
+#    if 'unit_year' in request.POST:
+#        year = request.POST['unit_year']
 
     bag = request.session.get('bag', {})
 
