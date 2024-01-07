@@ -24,40 +24,33 @@ def add_to_bag(request, item_id):
     year = int(request.POST.get('years'))
     redirect_url = request.POST.get('redirect_url')
 
+    year = None
+    if 'unit_year' in request.POST:
+        year = request.POST['unit_year']
+
     bag = request.session.get('bag', {})
 
-    if item_id in list(bag.keys()):
-        cart = json.loads(bag[item_id])
-
-        if 'year' in cart.keys():
-            cart["year"][0] += year
-            cart["unit"][0] += units
-            bag[item_id] = json.dumps(cart, default=set_default)
-            messages.warning(
-                request,
-                f'Note! Since you already have {product.name} in your bag, \
-                    this purchase will append existing year and units \
-                    for this product.'
-            )
-            messages.success(
-                request,
-                f'Updated {units} {product.name} with {year} to \
-                    {cart["unit"][0]} units.'
-            )
+    if year:
+        if item_id in list(bag.keys()):
+            if year in bag[item_id]["units_by_year"].keys():
+                bag[item_id]['units_by_year'][year] += units
+                messages.success(
+                    request,
+                    f'Updated {units} {product.name} with {year} to \
+                        {bag[item_id]['units_by_year'][year]} units.'
+                    )
+            else:
+                bag[item_id]['units_by_year'][year] = units
+                messages.success(
+                    request,
+                    f'Added {units} {product.name} for {year} year(s) to your bag'
+                )
         else:
-            bag[item_id] = json.dumps(
-                {'year': {year}, 'unit': {units}}, default=set_default)
+            bag[item_id] = {'units_by_year': {year: units}}
             messages.success(
-                request,
+                request, 
                 f'Added {units} {product.name} for {year} year(s) to your bag'
             )
-    else:
-        bag[item_id] = json.dumps(
-            {'year': {year}, 'unit': {units}}, default=set_default)
-        messages.success(
-            request,
-            f'Added {units} {product.name} for {year} year(s) to your bag'
-        )
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -68,24 +61,25 @@ def adjust_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     units = int(request.POST.get('units'))
-    year = int(request.POST.get('years'))
+    
+    year = None
+    if 'unit_year' in request.POST:
+        year = request.POST['unit_year']
 
     bag = request.session.get('bag', {})
 
-    cart = json.loads(bag[item_id])
+    if year: 
+        if units > 0:
 
-    if units > 0 and year > 0:
-        cart["year"][0] = year
-        cart["unit"][0] = units
-        bag[item_id] = json.dumps(cart, default=set_default)
-        messages.success(
-            request,
-            f'Updated {units} {product.name} with {year} to " \
-            {cart["unit"][0]} units'
-        )
-    else:
-        bag.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your bag')
+            bag[item_id]['units_by_year'][year] = units
+            messages.success(
+                request,
+                f'Updated {units} {product.name} with {year} to " \
+                {units} units'
+            )
+        else:
+            bag.pop(item_id)
+            messages.success(request, f'Removed {product.name} from your bag')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
@@ -97,14 +91,27 @@ def remove_from_bag(request, item_id):
     try:
         product = get_object_or_404(Product, pk=item_id)
         bag = request.session.get('bag', {})
-        bag.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your bag')
+
+        year = None
+        if 'unit_year' in request.POST:
+            year = request.POST['unit_year']
+
+        print(type(year))
+        print(year)
+
+        if year:
+            del bag[item_id]['units_by_year'][year]
+            if not bag[item_id]['units_by_year']:
+                bag.pop(item_id)
+
+            messages.success(request, f'Removed {product.name} from your bag')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
+        print(f'Error removing item: {e}')
         return HttpResponse(status=500)
 
 

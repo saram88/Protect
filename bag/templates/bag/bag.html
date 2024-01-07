@@ -67,7 +67,7 @@
                                 <tr>
                                     <th scope="col">Product Info</th>
                                     <th scope="col"></th>
-                                    <th scope="col">Price</th>
+                                    <th scope="col">Subsription price</th>
                                     <th scope="col">Units</th>
                                     <th scope="col">Subtotal</th>
                                 </tr>
@@ -82,7 +82,7 @@
                                         {% include 'bag/product-info.html' %}
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product_price }}</p>
+                                        <p class="my-0">${{ item.unit_price_year }}</p>
                                     </td>
                                     <td class="py-3 w-25">
                                         {% include 'bag/unit-year-form.html' %}
@@ -138,9 +138,9 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        //var year = $(this).data('years');
+        var year = $(this).data('unit_year');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
+        var data = {'csrfmiddlewaretoken': csrfToken, 'unit_year': year};
 
         $.post(url, data).done(function() {
             location.reload();

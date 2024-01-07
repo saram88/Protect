@@ -1,4 +1,5 @@
 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
 <p class="my-0"><strong>Units: </strong>{{ item.units }}</p>
+<p class="my-0"><strong>Unit price: </strong>${{ item.product_price|floatformat:2 }}</p>
 <p class="my-0"><strong>Subsription: </strong>{{ item.years }} Year(s)</p>
 <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
