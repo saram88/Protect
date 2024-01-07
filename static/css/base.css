@@ -188,6 +188,21 @@ a.category-badge > span.badge:hover {
     font-size: 15px;
 }
 
+/* Card */
+.card
+{
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 3px;
+}
+.card-header a
+{
+    text-transform: none;
+    color: #0f0f0f;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
 /* Bootstrap Toast */
 .message-container {
     position: fixed;
