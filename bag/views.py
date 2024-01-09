@@ -37,7 +37,7 @@ def add_to_bag(request, item_id):
                 messages.success(
                     request,
                     f'Updated {units} {product.name} with {year} to \
-                        {bag[item_id]['units_by_year'][year]} units.'
+                        {bag[item_id]["units_by_year"][year]} units.'
                     )
             else:
                 bag[item_id]['units_by_year'][year] = units
