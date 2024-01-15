@@ -425,6 +425,8 @@ User | Function | Description | Result
 
 #### Google Lighthouse Testing ####
 
+![](/media/readme/testchrome.png)
+
 The lighthouse results do vary depending on Internet contention and time of day, affecting the load times for linked resources such as bootstrap, fonts, css and js.
 The necessary bootstrap modules, particularly for Popper dropdown menus and Stripe functionality do add siginificant load, but are essential.
 Even with preload statements they still take time to load, so the Lighthouse performance stat is as good as it can be at this time.
@@ -433,7 +435,6 @@ So I managed to get good results by using WEBP file type for images, especially 
 
 I try to follow this manual, if you want to read more [Here](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/?utm_source=lighthouse&utm_medium=devtools)
 
-![](/media/readme/testchrome.png)
 
 #### HTML W3 Validation ####
 
