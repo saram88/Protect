@@ -26,6 +26,7 @@ Use the test card number 4242 4242 4242 4242 with a future expiration date, a th
     - [Checkout Page](#checkout-page)
     - [Ordersheet Page](#ordersheet-page)
     - [Profile Page](#profile-page)
+    . [Wishlist page](#wishlist-page)
     - [Contact Page](#contact-page)
     - [Error 404 Page and 500 error Page](#error-404-page-and-500-error-page)
     - [Forgot Password](#forgot-password)
@@ -91,6 +92,7 @@ Protect is a website built in Django using Python, JavaScript, CSS and HTML.
 - only logged in users can access the profile or logout pages.
 - only logged out users can access login and register page.
 - The menu collapses to a toggler on smaller screens, leaving the account, search and ordersheet and burger menu links in the navbar allowing for easy navigation across all device sizes.
+![](/media/readme/navigation.png)
 
 ### Footer
 - Links to the site's social media pages ( Facebook) are provided in the footer.
@@ -118,6 +120,9 @@ The home page is divided into different sections.
 
 - The product detail page provides additional information about the products
 - The user can choose the units of the product they wish to purchase
+- If an item is added for a certain duration of years, and the same item added for a different duration of years, they now appear as two separate cart items.
+For example, if you buy 1 item and choose 2 years, you can only add more products with 2 years of subscription. For example, if you want to add 1 item but change it to 3 years of subscription, you have to go back to the product page and add a new product with the number of selected years that you want and remove the first choice that you no longer want from the shopping cart.
+
 - Edit, Delete options are displayed on this page when the superuser/admin is logged in.
 
 ![](/media/readme/Product_detail.png)
@@ -145,9 +150,6 @@ The home page is divided into different sections.
 ### Wishlist Page
 
 - From product detal page, user can add an product to its personal wishlist. Applys only when user are logged in.
-
-    ![](/media/readme/add_product-wishlist.png)
-
 - In the top menu, user can access its own wishlist by clicking on the heart icon
     ![](/media/readme/wishlist.png)
 
@@ -157,7 +159,6 @@ The home page is divided into different sections.
 - User can also update their information.
 - The user can view their purchased product license. 
     ![](/media/readme/profile.png)
-
 
 ### Contact Page
 - The Contact page displays the imaginary address of the company office and its location on the map.
@@ -204,7 +205,6 @@ Only superuser users can delete reviews.
 
 - Devolope a antivirus software program
 - Add more product for security
-- Could add a 'Favourite' button where clients can save products to their favourites for later use. 
 - Could enable Site admin to respond to a message on the site
 
 ## Model Schema
@@ -344,7 +344,7 @@ For desktop, tablet, and mobile devices, where produced and only few colors were
 ### Logo ###
 For this project i create my own logo in Canva desgin. The logo also stand for all products but then whit different colors. The logo have something in it that make you think about protection and make the user to feel secure and get a good impression of the Company.   
 
-![](/media/readme/protect-logo.png)
+![](/media/readme/readmelogo.png)
 
 ### Color 
 
@@ -363,11 +363,7 @@ To se specifide detail about the deplyment, see deployment.md file
 
 ## Bugs
 
-- The minus unit and year button in the bag is meant to be disabled when the number hits 1. Which works on small screens after this refactor. However, this does not work on larger screens.
-The reason for this is because during this code refactoring, the instructor uses the unity year-form twice, and hides one or the other depending on the screen size. However, as the unity year-form uses an ID to identify itself, only the first element within the HTML with that ID is picked up by the corresponding code. Even though you can only see one form at a time in the browser, they both exist within the HTML.
-
-![](/media/readme/protectbug.png)
-
+- No bugs detacted after last update of site
 ## Testing
 
 ### Manually function testing ###
