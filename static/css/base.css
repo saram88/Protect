@@ -30,8 +30,8 @@ body {
 
 .dropdown-item:hover
 {
-    background-color: #aab7c4;
-    color: #FFF;
+    background-color: #EEE;
+    color: #222;
 }
 
 .dropdown-item
