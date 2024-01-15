@@ -91,11 +91,15 @@ Protect is a website built in Django using Python, JavaScript, CSS and HTML.
 - The user can see whether they are logged in from the "My Account" dropdown options, which vary depending on the user role (admin etc). This dropdown has additional choices only available to admin users.
 - only logged in users can access the profile or logout pages.
 - only logged out users can access login and register page.
-- The menu collapses to a toggler on smaller screens, leaving the account, search and ordersheet and burger menu links in the navbar allowing for easy navigation across all device sizes.
+
 ![](/media/readme/navigation.png)
 
+- The menu collapses to a toggler on smaller screens, leaving the account, search and ordersheet and burger menu links in the navbar allowing for easy navigation across all device sizes.
+
+![](/media/readme/navigation-collapse.png)
+
 ### Footer
-- Links to the site's social media pages ( Facebook) are provided in the footer.
+- Links to the site's social media pages (Facebook) are provided in the footer.
 - The footer also provides navigation to other important parts of the site including the Contact and Privacy Policy.
 
 ### Home Page
