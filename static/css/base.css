@@ -61,6 +61,21 @@ body {
     
 }
 
+.item-counter 
+{
+    font-size: 12px;
+    vertical-align: 0.3em;
+    position: absolute;
+    min-width: 19px;
+    height: 19px;
+    background-color: #dcb14a;
+    text-align: center;
+    line-height: 19px;
+    border-radius: 19px;
+    padding: 0 5px;
+    color: #222;
+    top: 0px;
+}
 
 /* Containers */
 
