@@ -26,7 +26,7 @@ Use the test card number 4242 4242 4242 4242 with a future expiration date, a th
     - [Checkout Page](#checkout-page)
     - [Ordersheet Page](#ordersheet-page)
     - [Profile Page](#profile-page)
-    . [Wishlist page](#wishlist-page)
+    - [Wishlist page](#wishlist-page)
     - [Contact Page](#contact-page)
     - [Error 404 Page and 500 error Page](#error-404-page-and-500-error-page)
     - [Forgot Password](#forgot-password)
@@ -51,7 +51,7 @@ Use the test card number 4242 4242 4242 4242 with a future expiration date, a th
     - [Paid Advertising](#paid-advertising)
     - [Links](#links)
     - [Design](#design)
-        - [Logo](#logo)
+    - [Logo](#logo)
     - [Color](#color)
 * [Deployment](#deployment)
 * [Bugs](#bugs)
@@ -151,7 +151,7 @@ For example, if you buy 1 item and choose 2 years, you can only add more product
 
 - From product detal page, user can add an product to its personal wishlist. Applys only when user are logged in.
 - In the top menu, user can access its own wishlist by clicking on the heart icon
-    ![](/media/readme/wishlist.png)
+    ![](/media/readme/wishlist-list.png)
 
 
 ### Profile Page
@@ -342,7 +342,7 @@ The website is created to look good and be easy to use, and also making it possi
 For desktop, tablet, and mobile devices, where produced and only few colors were used to maintain the ARIA accessibility of the website.
 
 ### Logo ###
-For this project i create my own logo in Canva desgin. The logo also stand for all products but then whit different colors. The logo have something in it that make you think about protection and make the user to feel secure and get a good impression of the Company.   
+For this project i create my own logo in Canva desgin. The logo also stand for all products but then whit different colors. The logo have something in it that make you think about protection and make the user to feel secure and get a good impression of the Company.
 
 ![](/media/readme/readmelogo.png)
 
@@ -367,6 +367,8 @@ To se specifide detail about the deplyment, see deployment.md file
 ## Testing
 
 ### Manually function testing ###
+
+Unit testing and functional testing have been carried out during the implementation of the project. Below is a list of specific tests that have been completed linked to user stories.
 
 #### Account Registration test #### 
 User | Function | Description | Result 
