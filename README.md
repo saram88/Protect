@@ -139,14 +139,14 @@ The home page is divided into different sections.
 - The page calculates prices of items automatically if an item is on sale.
 - The user may easily make their final purchasing decisions because they have the opportunity to update or remove goods from the ordersheet.
 
-    ![](/media/readme/ordersheet.jpg)
+    ![](/media/readme/ordersheet.png)
 
 
 ### Profile Page
 - A registered user can easily access their order history and modify their default shipping information on their profile page.
 - User can also update their information.
 - The user can view their purchased product license. 
-    ![]()
+    ![](/media/readme/profile.png)
 
 
 ### Contact Page
