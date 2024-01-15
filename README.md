@@ -433,7 +433,7 @@ So I managed to get good results by using WEBP file type for images, especially 
 
 I try to follow this manual, if you want to read more [Here](https://developer.chrome.com/docs/lighthouse/performance/uses-webp-images/?utm_source=lighthouse&utm_medium=devtools)
 
-![](/media/readme/testchrome.jpg)
+![](/media/readme/testchrome.png)
 
 #### HTML W3 Validation ####
 
