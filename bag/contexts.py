@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from profiles.models import UserProfile, UserWishlist
 
 import json
 
@@ -52,6 +53,12 @@ def bag_contents(request):
     vat = total * float(settings.STANDARD_VAT_PERCENTAGE / 100)
     grand_total = vat + total
 
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user=request.user)
+        wishlist = profile.wishlist.all()
+    else:
+        wishlist = None
+
     context = {
         'bag_items': bag_items,
         'total': total,
@@ -59,6 +66,7 @@ def bag_contents(request):
         'vat': vat,
         'vat_percentage': settings.STANDARD_VAT_PERCENTAGE,
         'grand_total': grand_total,
+        'wishlist': wishlist
     }
 
     return context

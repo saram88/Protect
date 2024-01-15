@@ -97,8 +97,8 @@
                         <a class="text-info text-black nav-link" href="{% url 'wishlist' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-heart fa-lg"></i></div>
-                                {% if product_count %}
-                                    <span class="item-counter">{{ product_count }}</span> 
+                                {% if wishlist %}
+                                    <span class="item-counter">{{ wishlist.count }}</span> 
                                 {% endif %}
                             </div>
                             <p class="my-0">&nbsp;</p>

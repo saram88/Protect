@@ -40,7 +40,7 @@
                                 {% for item in wishlist %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'product_detail' item.wished_product.id %}" class="mb-0">
+                                        <a href="{% url 'product_detail' item.wished_product.id %}" class="display-5 text-black">
                                             {{ item.wished_product.name }}
                                         </a>
                                     </td>
@@ -58,7 +58,7 @@
                         </table>
                     </div>
                 {% else %}    
-                    <small class="text-muted">No products in your wishlist</small>
+                    <small class="text-muted">No products in your wishlist. <a href="{% url 'products'%}">See our products</a></small>
                 {% endif %}
             </div>
         </div>

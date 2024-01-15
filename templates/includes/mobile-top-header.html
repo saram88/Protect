@@ -22,8 +22,8 @@
     <a class="text-primary text-black nav-link d-block d-lg-none" href="{% url 'wishlist' %}">
         <div class="text-center">
             <div><i class="fas fa-heart fa-lg"></i></div>
-                {% if product_count %}
-                    <span class="item-counter">0</span> 
+                {% if wishlist %}
+                    <span class="item-counter">{{ wishlist.count }}</span> 
                 {% endif %}
                 <p class="my-0">&nbsp;</p>
         </div>
