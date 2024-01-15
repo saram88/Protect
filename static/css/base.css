@@ -13,32 +13,34 @@ body {
 }
 
 .navbar-collapse {
-    background-color: #222;
+    /*background-color: #222;*/
+    color: #222;
 }
 
 .dropdown-menu {
-    background-color: #222;
+    /*background-color: #222;*/
+    color: #222;
 }
 
 .nav-item:hover
 {
-    background-color: #3b3b3b;
-    color: #FFF;
+    /*background-color: #3b3b3b;*/
+    color: #02680a;
 }
 
 .dropdown-item:hover
 {
-    background-color: #3b3b3b;
+    background-color: #aab7c4;
     color: #FFF;
 }
 
 .dropdown-item
 {
-    color: #FFF;
+    color: #222;
 }
 
 .navbar a {
-    color: #FFF;
+    color: #222;
 }
 
 .navbar-nav .nav-link {

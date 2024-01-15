@@ -15,7 +15,7 @@ import dj_database_url
 
 
 development = os.environ.get('DEVELOPMENT', False)
-
+development = True
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,9 +28,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-saram88-protect-dk3ctvwfy9z.ws-eu107.gitpod.io', '8000-saram88-protect-tqeomfp1o5w.ws-eu106.gitpod.io', 'saram88-protect-d3535879dbc8.herokuapp.com']  # noqa
+ALLOWED_HOSTS = ['8000-saram88-protect-6y1ylo438jt.ws-eu107.gitpod.io', '8000-saram88-protect-tqeomfp1o5w.ws-eu106.gitpod.io', 'saram88-protect-d3535879dbc8.herokuapp.com']  # noqa
 
 
 # Application definition
