@@ -142,6 +142,16 @@ The home page is divided into different sections.
     ![](/media/readme/ordersheet.png)
 
 
+### Wishlist Page
+
+- From product detal page, user can add an product to its personal wishlist. Applys only when user are logged in.
+
+    ![](/media/readme/add_product-wishlist.png)
+
+- In the top menu, user can access its own wishlist by clicking on the heart icon
+    ![](/media/readme/wishlist.png)
+
+
 ### Profile Page
 - A registered user can easily access their order history and modify their default shipping information on their profile page.
 - User can also update their information.
