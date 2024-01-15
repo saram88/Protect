@@ -120,7 +120,7 @@ The home page is divided into different sections.
 - The user can choose the units of the product they wish to purchase
 - Edit, Delete options are displayed on this page when the superuser/admin is logged in.
 
-![](/media/readme/Product-detail.png)
+![](/media/readme/Product_detail.png)
 
 
 ### Checkout Page
