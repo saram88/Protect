@@ -51,9 +51,9 @@
     <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-lg-flex">
-            <div class="col-3 py-lg-0 text-center text-lg-left d-none d-lg-block"">
+            <div class="col-3 py-lg-1 text-center text-lg-left d-none d-lg-block"">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0">We <span class="text-bold-green">Protect</span> You</h2>
+                    <h3 class="logo-font text-black my-0">We <span class="text-bold-green">Protect</span> You</h3>
                 </a>
             </div>
             <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
@@ -80,7 +80,7 @@
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-1" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>

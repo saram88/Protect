@@ -47,6 +47,21 @@ body {
     padding-left: 5px;
 }
 
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    float: none;
+}
+
+.navbar-nav .dropdown-main-menu {
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0f6674;
+    
+}
+
+
 /* Containers */
 
 .home-containter {
