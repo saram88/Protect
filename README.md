@@ -3,7 +3,7 @@
 This is my Code Institute student PP5 final project Protect shop readme.
 The live link and my GitHUb reprosity you can find here:
 
-## **[Live site](https://saram88-protect-d3535879dbc8.herokuapp.com/bag/)**
+## **[Live site](https://saram88-protect-d3535879dbc8.herokuapp.com/)**
 
 ## **[GitHub](https://github.com/saram88/Protect)**
 
@@ -120,7 +120,7 @@ The home page is divided into different sections.
 - The user can choose the units of the product they wish to purchase
 - Edit, Delete options are displayed on this page when the superuser/admin is logged in.
 
-![](/media/readme/protect-message-adding-same-product-to-bag.png)
+![](/media/readme/Product-detail.png)
 
 
 ### Checkout Page
@@ -129,7 +129,6 @@ The home page is divided into different sections.
 - It also shows the summary of the products so that the user knows what they are purchasing before making the payment.
 - The page gives the buyer an option to create an account if they wish to save their details for future.
 
-- When you add a product that is already in the shopping bag, the number of units and year is automatically added to the existing product that is in the shopping bag.A warning text is displayed when the product is added.
 
  ![](/media/readme/checkout.png)
 
