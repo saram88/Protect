@@ -165,7 +165,7 @@ def add_review(request, product_id):
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, you have to log in to add a review.')
         return redirect(reverse('products'))
-    
+
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':

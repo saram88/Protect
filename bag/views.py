@@ -5,8 +5,6 @@ from django.contrib import messages
 
 from products.models import Product
 
-import json
-
 # Create your views here.
 
 
@@ -43,12 +41,13 @@ def add_to_bag(request, item_id):
                 bag[item_id]['units_by_year'][year] = units
                 messages.success(
                     request,
-                    f'Added {units} {product.name} for {year} year(s) to your bag'
+                    f'Added {units} {product.name} for {year} year(s) \
+                        to your bag'
                 )
         else:
             bag[item_id] = {'units_by_year': {year: units}}
             messages.success(
-                request, 
+                request,
                 f'Added {units} {product.name} for {year} year(s) to your bag'
             )
 
@@ -61,14 +60,14 @@ def adjust_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     units = int(request.POST.get('units'))
-    
+
     year = None
     if 'unit_year' in request.POST:
         year = request.POST['unit_year']
 
     bag = request.session.get('bag', {})
 
-    if year: 
+    if year:
         if units > 0:
 
             bag[item_id]['units_by_year'][year] = units

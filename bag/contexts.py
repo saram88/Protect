@@ -1,10 +1,7 @@
-from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
-from profiles.models import UserProfile, UserWishlist
-
-import json
+from profiles.models import UserProfile
 
 
 def bag_contents(request):
@@ -31,7 +28,7 @@ def bag_contents(request):
                 y = int(year)
                 if product.discount:
                     new_price = float(
-                        product.price - (product.price * product.discount / 100)
+                        product.price - (product.price*product.discount/100)
                     )
                     total += (y * units * new_price)
                     product_price = round(new_price, 2)

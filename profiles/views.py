@@ -67,22 +67,25 @@ def wishlist(request):
 
     return render(request, template, context)
 
+
 @login_required
 def add_to_wishlist(request, product_id):
 
     if not request.user.is_authenticated:
-        messages.error(request, 'Sorry, you have to log in to add a to wishlist.')
+        messages.error(
+            request,
+            'Sorry, you have to log in to add a to wishlist.'
+        )
         return redirect(reverse('products'))
-    
+
     profile = get_object_or_404(UserProfile, user=request.user)
     product = get_object_or_404(Product, pk=product_id)
 
-    
-    wished_product,created = UserWishlist.objects.get_or_create(
+    wished_product, created = UserWishlist.objects.get_or_create(
         wished_product=product,
-        user_profile = profile,
+        user_profile=profile,
     )
-    messages.success(request,'The product was added to your wishlist')
+    messages.success(request, 'The product was added to your wishlist')
 
     return redirect(reverse('product_detail', args=[product.id]))
 

@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .forms import ContactForm
 

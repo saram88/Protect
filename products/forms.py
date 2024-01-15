@@ -37,5 +37,5 @@ class ReviewForm(forms.ModelForm):
         labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
-        
+
         self.fields['comment'].widget.attrs['autofocus'] = True

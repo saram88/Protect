@@ -7,6 +7,7 @@ from django_countries.fields import CountryField
 
 from products.models import Product
 
+
 class UserProfile(models.Model):
     """
     A user profile model for maintaining default
@@ -25,10 +26,14 @@ class UserProfile(models.Model):
     default_town_or_city = models.CharField(
         max_length=40, null=True, blank=True
     )
-    default_county = models.CharField(max_length=80, 
-        null=True, blank=True)
-    default_postcode = models.CharField(max_length=20, 
-        null=True, blank=True)
+    default_county = models.CharField(
+        max_length=80,
+        null=True, blank=True
+    )
+    default_postcode = models.CharField(
+        max_length=20,
+        null=True, blank=True
+    )
     default_country = CountryField(
         blank_label='Country', null=True, blank=True
     )
@@ -61,6 +66,7 @@ class UserWishlist(models.Model):
 
     wished_product = models.ForeignKey(Product, on_delete=models.CASCADE)
     added_date = models.DateTimeField(auto_now_add=True)
+
 
 def __str__(self):
     return self.wished_product.name
