@@ -1,4 +1,4 @@
-![CI logo](/media/readme/protect-logo.png) 
+![CI logo](/media/readme/readmelogo.png) 
 # Welcome to Protect shop
 This is my Code Institute student PP5 final project Protect shop readme.
 The live link and my GitHUb reprosity you can find here:
